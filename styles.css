@@ -40775,8 +40775,8 @@ header {
     justify-content: space-between;
 
 align-content: center;
-    padding-bottom: 8px;
-padding-top: 8px;
+    /* padding-bottom: 8px;
+padding-top: 8px; */
 
 padding-left: 40px;
 padding-right: 40px;
@@ -40827,8 +40827,8 @@ margin: 0;
 }
 
 .logoImage{
-    height: 40px;
-    width: 40px;
+    height: 80px;
+    width: 80px;
 
 }
 
