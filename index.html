@@ -804,11 +804,11 @@
 
 
 <!-- The Modal -->
-<div id="formModal" class="modal" style="display: none;">
+<div  class="modal formModal" style="display: none;">
   <div class="modal-content">
       <span class="close">&times;</span>
       <!-- The Form -->
-      <div class=" align-self-center formDiv">
+      <div class=" align-self-center formUpperDiv">
               
 
         <form name="landing-form" enctype="multipart/form-data" id="formId">
@@ -819,7 +819,7 @@
             name="ci_csrf_token"
             value=""
           />
-          <div class="bs-form typ-reach typ-banner-form">
+          <div class="bs-form typ-reach typ-banner-form " id="formDiv">
             <div id="successMessage" style="display:none; color: green; margin: 15px; font-weight: 700;">Form submitted successfully!</div>
             <p class="form-title tab-title fw-bold">
               Tell us about your requirements
@@ -1281,7 +1281,7 @@
           </div>
           <div class="row marg-top-btn">
             <div class="col-xl-12 text-center">
-              <a  id="openModalBtn" class="bs-btn get"> get started </a>
+              <a  href="javascript:void(0);" class="bs-btn get openModalBtn"> get started </a>
             </div>
             &nbsp;
           </div>
@@ -2031,8 +2031,8 @@
               </div>
             </div>
             <div class="col-md-12">
-              <div class="tab-nav typ-single text-center mt-4">
-                <a href="#" class="bs-btn text-uppercase">Get Started</a>
+              <div class="tab-nav typ-single text-center mt-4 openModalBtn">
+                <a href="javascript:void(0);" class="bs-btn text-uppercase ">Get Started</a>
               </div>
             </div>
             &nbsp;
@@ -2044,12 +2044,13 @@
 
       <section class="lyt-section typ-lp-eligibility">
         <h1
-          class="bs-heading typ-center mb-30 wow fadeInUp"
+          class="bs-heading typ-center mb-30 wow fadeInUp "
           data-wow-delay="0.2s"
+         
         >
           Check Eligibility
         </h1>
-        <a href="#"> </a>
+        <a href=""> </a>
         <div class="bs-contact bg_eligibility">
           <a href="#"> </a>
           <div class="container-fluid">
@@ -2081,7 +2082,7 @@
                         Eligibility. Get Home Loans That Adapt To You!
                       </p>
                     </h1> </a
-                  ><a href="#"
+                  ><a href="javascript:void(0);" class="openModalBtn"
                     ><button
                       type="button"
                       class="bs-btn text-uppercase btn-eligibility"
@@ -2249,7 +2250,7 @@
                     <div class="tab-nav typ-single">
                       <!-- <button type="button" data-toggle="tab" class="bs-btn text-uppercase"
                                         data-bs-toggle="modal" data-bs-target="#exampleModal">Apply Now</button> -->
-                      <a href="#"
+                      <a href="javascript:void(0);" class="openModalBtn"
                         ><button type="button" class="bs-btn text-uppercase">
                           Apply Now
                         </button></a
@@ -2317,23 +2318,33 @@
       </section>
       <!--EMI Calculator End-->
     </main>
-    <script>
-      // Open modal
-      document.getElementById('openModalBtn').onclick = function() {
-          document.getElementById('formModal').style.display = 'flex';
-      };
-  
-      // Close modal
-      document.querySelector('.close').onclick = function() {
-          document.getElementById('formModal').style.display = 'none';
-      };
-  
-      // Close modal when clicking outside the content
-      window.onclick = function(event) {
-          if (event.target == document.getElementById('formModal')) {
-              document.getElementById('formModal').style.display = 'none';
-          }
-      };
+  <script>
+    // Open modal
+document.querySelectorAll('.openModalBtn').forEach(button => {
+    button.onclick = function() {
+        document.querySelectorAll('.formModal').forEach(modal => {
+            modal.style.display = 'flex';
+        });
+    };
+});
+
+// Close modal
+document.querySelectorAll('.close').forEach(button => {
+    button.onclick = function() {
+        document.querySelectorAll('.formModal').forEach(modal => {
+            modal.style.display = 'none';
+        });
+    };
+});
+
+// Close modal when clicking outside the content
+window.onclick = function(event) {
+    document.querySelectorAll('.formModal').forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+};
   </script>
   
     <!-- footer start -->

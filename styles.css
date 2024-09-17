@@ -40768,12 +40768,16 @@ span#hide {
 
 /* Modal Content */
 .modal-content {
+    /* align-content: center; */
     background-color: #fefefe;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
     max-width: 1000px; /* Optional: Limit the width */
     border-radius: 10px;
+    height: 620px;
+    margin-top: 90px;
+    z-index: 100000;
 }
 
 /* Close Button */
@@ -40791,9 +40795,16 @@ span#hide {
     cursor: pointer;
 }
 
-.formDiv{
-    margin-top: 700px;
-    margin-left: 0;
+#formDiv{
+   width: 100% !important;
+   position: static;
+   height: 30vh;
+   padding-top: 0;
+   margin-top: 0;
+}
+.formUpperDiv{
+    /* margin-top: 20px; */
+    height: 40vh;
 }
 /* Center the form content */
 /* .form-container {
