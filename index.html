@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <!-- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> -->
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -308,11 +308,11 @@
 
         //var pincode = /^\d{6}$/;
 
-        if ((p == "" || p == null) && p.length < 6) {
-          validate = false;
-          document.getElementById("error_pin").innerHTML =
-            "Please enter 6 digits pincode";
-        } else {
+        // if ((p == "" || p == null) && p.length < 6) {
+        //   validate = false;
+        //   document.getElementById("error_pin").innerHTML =
+        //     "Please enter 6 digits pincode";
+        // } else {
           // if(!p.match(pincode))
           // {
           //     validate = false;
@@ -368,197 +368,31 @@
           $("#Nextdisable").prop("disabled", true);
 
           // alert(csrfHash);
-
           $.ajax({
-            type: "post",
-            url: "https://g6fOSCtelwTJ.com/Forms/landing_check_consent",
-            data: {
-              first_n: f,
-              last_n: l,
-              email: e,
-              contact: c,
-              loan: lo,
-              pin: p,
-              radioyesno: l_t,
-              dsauserid: dsauserid,
-              [csrfName]: csrfHash,
-            },
-            dataType: "json",
-            async: false,
-            success: function (data) {
-              // ?php $this->session->set_flashdata('messageadd','Thank you for contacting us. We will get back to you soon'); ?>
-              // // alert('Data Sent');
-              // $(".messagesdons").html(
-              //     '<div class="box-header"> <span class="message11"></span> <br><br>' +
-              //     '<div class="alert alert-success alert-dismissible" style="margin-top:-50px; padding: 10px"> ' +
-              //     //?= $this->session->flashdata('messageadd');?> +
-              //     'Thank you for contacting us. We will get back to you soon. &nbsp;' +
-              //     '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> </div> </div>')
-              // $('#msg').html(html);
+    type: "post",
+    url: "https://www.parislondrestrain.fr/admin/home-loan/save",
+    data: JSON.stringify({
+        name: f,
+        lastname: l,
+        email: e,
+        mobile: c,
+        loanamount: lo,
+        property_city: p,
+    }),
+    contentType: "application/json",
+    success: function(response) {
+      $('#successMessage').show();
+      $('#formId')[0].reset();
+     
+        console.log(response);
+    },
+    error: function(xhr, status, error) {
+        console.error('Error:', error);
+    }
+});
 
-              if (data.customerConsentStatus == "Available") {
-                sessionStorage.setItem("aplication_code", data.basicAppId);
-                sessionStorage.setItem("mobile", c);
-                window.location.replace(
-                  "https://g6fOSCtelwTJ.com/apply-now/thanks.php"
-                );
-              } else {
-                // sessionStorage.setItem("aplication_code", data.basicAppId);
-                // sessionStorage.setItem("apply_first_n", f);
-                // sessionStorage.setItem("apply_last_n", f);
-                // sessionStorage.setItem("apply_email", f);
-                sessionStorage.setItem("mobile", c);
-                // sessionStorage.setItem("applu_loan", valueToNumber);
-                // sessionStorage.setItem("applu_pin", valueToNumber);
-                // sessionStorage.setItem("applu_radioyesno", valueToNumber);
-                // sessionStorage.setItem("applu_dsauserid", valueToNumber);
 
-                //alert("Going next");
-                // document.getElementById("myDIV").style.display = "none"
-                var divsToHide = document.getElementsByClassName("otp_tab1"); //divsToHide is an array
-                for (var i = 0; i < divsToHide.length; i++) {
-                  // divsToHide[i].style.visibility = "hidden"; // or
-                  divsToHide[i].style.display = "none"; // depending on what you're doing
-                }
-
-                var divsToShow = document.getElementsByClassName("otp_tab2"); //divsToShow is an array
-                for (var i = 0; i < divsToShow.length; i++) {
-                  // divsToShow[i].style.visibility = "hidden"; // or
-                  divsToShow[i].style.display = "block"; // depending on what you're doing
-                }
-
-                var seconds = 60; //30
-                var countdown = setInterval(function () {
-                  seconds--;
-                  document.getElementById("countersss2").textContent =
-                    seconds + " Sec";
-                  if (seconds <= 0) clearInterval(countdown);
-                }, 1000);
-
-                document.getElementById("mob_session_landing").textContent =
-                  "Enter the 4-digit code sent to +91" + c;
-
-                $("#otp_tab2_submit").click(function () {
-                  // alert("button clicked");
-
-                  if ($("#countersss2").text() !== "0 Sec") {
-                    // alert("otp valid");
-                    // document.getElementById("form_resend_otp").style.display = "none";
-
-                    let otp =
-                      document.forms["landing-form"]["landing_form_otp"];
-                    let otp_val = otp.value;
-
-                    let validate2 = true;
-
-                    if (otp_val == "" || otp_val == null) {
-                      validate2 = false;
-                      document.getElementById("error_otp").innerHTML =
-                        "Field Required";
-                    } else if (otp_val.length < 4) {
-                      validate2 = false;
-                      document.getElementById("error_otp").innerHTML =
-                        "OTP must be 4 digits";
-                    } else {
-                      document.getElementById("error_otp").innerHTML = "";
-                    }
-
-                    var consent = false;
-
-                    if ($("#consent2").is(":checked")) {
-                      consent = true;
-                    }
-
-                    if (validate2 === false) {
-                      return false;
-                    } else {
-                      $.ajax({
-                        type: "post",
-                        url: "https://g6fOSCtelwTJ.com/Forms/check_otp",
-                        data: {
-                          otp_val: otp_val,
-                          otp_consent: consent,
-                          mobile: c,
-                          dsauserid: dsauserid,
-                          [csrfName]: csrfHash,
-                        },
-                        dataType: "json",
-                        async: false,
-                        success: function (data) {
-                          // alert("succcess2");
-
-                          if (data.result_code == 0) {
-                            // alert("yup");
-                            $(".landingmessage_otp").html(
-                              '<div class="alert alert-danger alert-dismissible">' +
-                                data.result +
-                                '<a href="#" class="close" data-dismiss="alert" aria-label="close" style="margin-top: -10px;float: right; padding: 10px">&times;</a> </div>'
-                            );
-                          } else {
-                            $("#otp_tab2_submit").prop("disabled", true);
-                            $(".messagesdons").html("");
-                            $.ajax({
-                              type: "post",
-                              url: "https://g6fOSCtelwTJ.com/Forms/landing_insert_updated",
-                              data: {
-                                first_n: f,
-                                last_n: l,
-                                email: e,
-                                contact: c,
-                                loan: lo,
-                                pin: p,
-                                radioyesno: l_t,
-                                dsauserid: dsauserid,
-                                [csrfName]: csrfHash,
-                              },
-                              dataType: "json",
-                              async: false,
-                              success: function (data) {
-                                if (
-                                  data.basicAppId == undefined ||
-                                  data.basicAppId == "" ||
-                                  data.basicAppId == null
-                                ) {
-                                  // alert(data.curl_response);
-                                  // $('.messagesdons').html('<div class="alert alert-danger alert-dismissible"><a onclick="this.parentElement.style.display=\'none\';" class="close" data-dismis="alert" aria-label="close">&times;</a>' + data.curl_response + '</div>');
-                                  // $('.landingmessage_otp').html('<div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' + data.curl_response + '</div>');
-                                  //$('.messagesdons').html('<div class="alert alert-danger alert-dismissible">' + data.curl_response + '<a href="#" class="close" data-dismiss="alert" aria-label="close" style="margin-top: 100px;float: right; padding: 3px">&times;</a> </div>');
-
-                                  setTimeout(function () {
-                                    window.open(
-                                      "https://g6fOSCtelwTJ.com/apply-now/thanks.php"
-                                    );
-                                  });
-                                } else {
-                                  sessionStorage.setItem(
-                                    "aplication_code",
-                                    data.basicAppId
-                                  );
-                                  sessionStorage.setItem("mobile", c);
-                                  window.location.replace(
-                                    "https://g6fOSCtelwTJ.com/apply-now/thanks.php"
-                                  );
-                                }
-                              },
-                            });
-                          }
-                        },
-                      });
-                    }
-                  } else {
-                    // alert("expired otp");
-                    // document.getElementById("form_resend_otp").style.display = "block";
-                    document.getElementById("error_otp").innerHTML =
-                      "OTP Expired";
-
-                    return false;
-                  }
-                });
-              }
-            },
-          });
-        }
-      }}
+}}
     </script>
 
     <main class="home">
@@ -572,7 +406,7 @@
           <div class="leftSideNavbar">
             <div class="phoneNumderDiv">
               <i class="fa-solid fa-phone"></i>
-              <p>+91 63998891122</p>
+              <p>+91 6399889612</p>
             </div>
 
             <div class="userProfileDiv">
@@ -627,7 +461,10 @@
               </div>
             </div>
             <div class="col-lg-6 align-self-end">
-              <form name="landing-form" enctype="multipart/form-data">
+              
+
+              <form name="landing-form" enctype="multipart/form-data" id="formId">
+               
                 <input
                   type="hidden"
                   class="txt_csrfname"
@@ -635,6 +472,7 @@
                   value=""
                 />
                 <div class="bs-form typ-reach typ-banner-form">
+                  <div id="successMessage" style="display:none; color: green; margin: 15px; font-weight: 700;">Form submitted successfully!</div>
                   <p class="form-title tab-title fw-bold">
                     Tell us about your requirements
                   </p>
@@ -944,10 +782,10 @@
                     <input
                       type="button"
                       name="Next"
-                      value="Next"
+                      value="Submit"
                       class="btn btn-primary-custom otp_tab1"
                       id="Nextdisable"
-                      onclick="return formValidation()"
+                      onclick=" return formValidation()"
                     />
                   </div>
                 </div>
