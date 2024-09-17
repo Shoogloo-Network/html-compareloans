@@ -378,6 +378,7 @@
         mobile: c,
         loanamount: lo,
         property_city: p,
+        loantype:l_t,
     }),
     contentType: "application/json",
     success: function(response) {
@@ -801,6 +802,351 @@
       </section>
       <!-- banner end -->
 
+
+<!-- The Modal -->
+<div id="formModal" class="modal" style="display: none;">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- The Form -->
+      <div class=" align-self-center formDiv">
+              
+
+        <form name="landing-form" enctype="multipart/form-data" id="formId">
+         
+          <input
+            type="hidden"
+            class="txt_csrfname"
+            name="ci_csrf_token"
+            value=""
+          />
+          <div class="bs-form typ-reach typ-banner-form">
+            <div id="successMessage" style="display:none; color: green; margin: 15px; font-weight: 700;">Form submitted successfully!</div>
+            <p class="form-title tab-title fw-bold">
+              Tell us about your requirements
+            </p>
+            <p class="form-check-label" for="inlineRadio1">
+              Select Your Loan Type
+            </p>
+
+            <div class="messagesdons"></div>
+
+            <div class="row otp_tab1">
+              <div class="radio-box">
+                <div class="form-check">
+                  <input
+                    onchange='myChange("error_loan_type")'
+                    class="form-check-input radioyesno"
+                    type="radio"
+                    name="radioyesno"
+                    value="Home Loan"
+                    id="propertyDefault1"
+                  />
+                  <label
+                    tabindex="1"
+                    class="form-check-label"
+                    for="propertyDefault1"
+                  >
+                    HOME LOAN
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    onchange='myChange("error_loan_type")'
+                    class="form-check-input radioyesno"
+                    type="radio"
+                    name="radioyesno"
+                    value="Loan Against Property"
+                    id="propertyDefault2"
+                  />
+                  <label
+                    tabindex="2"
+                    class="form-check-label"
+                    for="propertyDefault2"
+                  >
+                    LOAN AGAINST PROPERTY
+                  </label>
+                </div>
+                <p
+                  id="error_loan_type"
+                  style="
+                    color: red;
+                    font-size: 15px;
+                    font-family: 'Inter', sans-serif;
+                  "
+                ></p>
+              </div>
+            </div>
+            <div class="row otp_tab1">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="inputbox">
+                  <label
+                    >FIRST NAME <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="first_n"
+                    name="first_n"
+                    class="form-control-plaintext"
+                    oninput="firstNameValidation()"
+                    autocomplete="off"
+                  />
+                  <p
+                    id="error_first_n"
+                    style="
+                      color: red;
+                      font-size: 15px;
+                      font-family: 'Inter', sans-serif;
+                    "
+                  ></p>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="inputbox">
+                  <label
+                    >LAST NAME <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="last_n"
+                    name="last_n"
+                    class="form-control-plaintext"
+                    oninput="lastNameValidation()"
+                    autocomplete="off"
+                  />
+                  <p
+                    id="error_last_n"
+                    style="
+                      color: red;
+                      font-size: 15px;
+                      font-family: 'Inter', sans-serif;
+                    "
+                  ></p>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="inputbox">
+                  <label
+                    >EMAIL ID <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    class="form-control-plaintext"
+                    oninput="emailvalidation()"
+                    autocomplete="off"
+                  />
+                  <p
+                    id="error_email"
+                    style="
+                      color: red;
+                      font-size: 15px;
+                      font-family: 'Inter', sans-serif;
+                    "
+                  ></p>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <input
+                  type="hidden"
+                  name="dsauserid"
+                  id="dsauserid"
+                  class="dsauserid"
+                  value="BAE0012BC"
+                />
+                <div class="inputbox">
+                  <label
+                    >CONTACT NUMBER
+                    <span class="text-danger">*</span></label
+                  >
+                  <input
+                    maxlength="10"
+                    type="text"
+                    class="form-control-plaintext"
+                    id="contact"
+                    name="contact"
+                    oninput="contactValidation()"
+                    autocomplete="off"
+                  />
+                  <p
+                    id="error_contact"
+                    style="
+                      color: red;
+                      font-size: 15px;
+                      font-family: 'Inter', sans-serif;
+                    "
+                  ></p>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="inputbox">
+                  <label
+                    >LOAN AMOUNT <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    name="loan"
+                    class="form-control"
+                    id="loans"
+                    oninput="loanvalidation()"
+                    autocomplete="off"
+                  />
+                  <p
+                    id="error_loan"
+                    style="
+                      color: red;
+                      font-size: 15px;
+                      font-family: 'Inter', sans-serif;
+                    "
+                  ></p>
+                  <span id="hide">Min. Loan Amount - 30 Lacs</span>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="inputbox">
+                  <label
+                    >PROPERTY PINCODE
+                    <span class="text-danger">*</span></label
+                  >
+                  <input
+                    maxlength="6"
+                    type="text"
+                    id="pinvalidation"
+                    name="pin"
+                    class="form-control-plaintext"
+                    autocomplete="off"
+                  />
+                  <p
+                    id="error_pin"
+                    style="
+                      color: red;
+                      font-size: 15px;
+                      font-family: 'Inter', sans-serif;
+                    "
+                  ></p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row otp_tab2" id="OTP" style="display: none">
+            
+              <p
+                class="form-title tab-title fw-normal"
+                id="mob_session_landing"
+              ></p>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <span class="landingmessage_otp"></span> -->
+                <!-- <div class="inputbox" style="margin-bottom: 0">
+                  <label class="">Otp</label>
+
+                  <div style="display: flex">
+                    <input
+                      style="float: right"
+                      onchange='myChange("error_otp")'
+                      type="text"
+                      maxlength="4"
+                      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      class="form-control-plaintext"
+                      id="landing_form_otp"
+                      name="landing_form_otp"
+                      placeholder="XXXX"
+                    />
+                    <span
+                      class="sec countersss"
+                      id="countersss2"
+                      style="float: right; width: 15%"
+                      >30 Sec</span
+                    >
+                  </div>
+                </div> -->
+
+                <!-- <div
+                  class="inputbox resend-otp-text"
+                  style="margin-top: 15px"
+                >
+                  <a
+                    onclick="return resendOTP()"
+                    id="form_resend_otp"
+                    style="
+                      background-color: #04b6fe;
+                      border-color: #04b6fe;
+                      color: #fff;
+                      padding: 10px 40px;
+                      border-radius: 30px;
+                      text-transform: uppercase;
+                      font-weight: 600;
+                    "
+                  >
+                    Resend OTP
+                  </a>
+                  <p
+                    id="error_otp"
+                    style="
+                      float: right;
+                      color: red;
+                      font-size: 15px;
+                      font-family: 'Inter', sans-serif;
+                    "
+                  ></p>
+                </div> -->
+
+                <!-- <div class="form-check otp-checkbox">
+                  <input
+                    type="checkbox"
+                    id="consent2"
+                    name="consent2"
+                    value="yes"
+                    class="form-check-input"
+                    checked=""
+                  /> -->
+                  <!-- <label for="consent2" class="form-check-label"
+                    >I agree to
+                    <a href="terms-and-conditions.html"
+                      >Terms &amp; Conditions
+                    </a></label
+                  ><br /> -->
+                <!-- </div>
+              </div>
+            </div> -->
+            <div class="form-button">
+              <!-- <input
+                type="button"
+                name="Submit"
+                value="SUBMIT"
+                id="otp_tab2_submit"
+                class="otp_tab2"
+                style="
+                  display: none;
+                  text-align: right;
+                  margin-left: auto;
+                  background-color: #04b6fe;
+                  border-color: #04b6fe;
+                  color: #fff;
+                  padding: 10px 40px;
+                  border-radius: 30px;
+                  text-transform: uppercase;
+                  font-weight: 600;
+                "
+              /> -->
+              <input
+                type="button"
+                name="Next"
+                value="Submit"
+                class="btn btn-primary-custom otp_tab1"
+                id="Nextdisable"
+                onclick=" return formValidation()"
+              />
+            </div>
+          </div>
+        </form>
+        <img
+          src="assets/images/homeloan/topBanner.png"
+          alt=""
+          class="desktop-hide"
+        />
+      </div>
+  </div>
+</div>
+
       <!-- mod-counter start -->
       <section class="mod-counter">
         <div class="container">
@@ -935,7 +1281,7 @@
           </div>
           <div class="row marg-top-btn">
             <div class="col-xl-12 text-center">
-              <a href="#" class="bs-btn get"> get started </a>
+              <a  id="openModalBtn" class="bs-btn get"> get started </a>
             </div>
             &nbsp;
           </div>
@@ -1971,7 +2317,25 @@
       </section>
       <!--EMI Calculator End-->
     </main>
-
+    <script>
+      // Open modal
+      document.getElementById('openModalBtn').onclick = function() {
+          document.getElementById('formModal').style.display = 'flex';
+      };
+  
+      // Close modal
+      document.querySelector('.close').onclick = function() {
+          document.getElementById('formModal').style.display = 'none';
+      };
+  
+      // Close modal when clicking outside the content
+      window.onclick = function(event) {
+          if (event.target == document.getElementById('formModal')) {
+              document.getElementById('formModal').style.display = 'none';
+          }
+      };
+  </script>
+  
     <!-- footer start -->
     <!-- footer end -->
 
@@ -4533,5 +4897,6 @@
         }
       }
     </script>
+   
   </body>
 </html>
