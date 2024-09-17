@@ -145,36 +145,36 @@
           "<span style='color:green;font-size: 15px; font-family: 'Inter', sans-serif;'>Looks good</span>";
       }
 
-      function resendOTP() {
-        var mobile_saved = sessionStorage.getItem("mobile");
-        //document.getElementById("countersss2").textContent = 30 + " Sec";
-        document.getElementById("error_otp").innerHTML = "";
-        // alert("Mob >> " + mobile_saved);
-        $.ajax({
-          type: "post",
-          url: "https://g6fOSCtelwTJ.com/Forms/resend_otp",
-          data: {
-            mobile: mobile_saved,
-          },
-          dataType: "json",
-          async: false,
-          success: function (data) {
-            var seconds = 60; //30
-            var countdown = setInterval(function () {
-              seconds--;
-              document.getElementById("countersss2").textContent =
-                seconds + " Sec";
-              if (seconds <= 0) clearInterval(countdown);
-            }, 1000);
+      // function resendOTP() {
+      //   var mobile_saved = sessionStorage.getItem("mobile");
+    
+      //   document.getElementById("error_otp").innerHTML = "";
+       
+      //   $.ajax({
+      //     type: "post",
+      //     url: "https://g6fOSCtelwTJ.com/Forms/resend_otp",
+      //     data: {
+      //       mobile: mobile_saved,
+      //     },
+      //     dataType: "json",
+      //     async: false,
+      //     success: function (data) {
+      //       var seconds = 60; 
+      //       var countdown = setInterval(function () {
+      //         seconds--;
+      //         document.getElementById("countersss2").textContent =
+      //           seconds + " Sec";
+      //         if (seconds <= 0) clearInterval(countdown);
+      //       }, 1000);
 
-            $(".landingmessage_otp").html(
-              '<div class="alert alert-info alert-dismissible"> OTP re-sent to +91' +
-                mobile_saved +
-                ' <a href="#" class="close" data-dismiss="alert" aria-label="close" style="margin-top: -10px;float: right; padding: 10px">&times;</a> </div>'
-            );
-          },
-        });
-      }
+      //       $(".landingmessage_otp").html(
+      //         '<div class="alert alert-info alert-dismissible"> OTP re-sent to +91' +
+      //           mobile_saved +
+      //           ' <a href="#" class="close" data-dismiss="alert" aria-label="close" style="margin-top: -10px;float: right; padding: 10px">&times;</a> </div>'
+      //       );
+      //     },
+      //   });
+      // }
 
       function formValidation() {
         // alert("entered func");
@@ -322,37 +322,38 @@
           // else document.getElementById("error_pin").innerHTML = "";
           // alert('entered');
 
-          let flag = 0;
 
-          $.ajax({
-            type: "GET",
-            url:
-              "https://dev-placeservice.basichomeloan.com/api/v1/Pin/pincodedeatils/" +
-              p,
-            data: "",
-            cache: false,
-            dataType: "json",
-            async: false,
-            success: function (res) {
-              // alert("yes");
-              // alert(JSON.stringify(res.result));
-              console.log(res);
-              if (res.result) {
-                // alert("valid");
-                // flag = 1;
-                document.getElementById("error_pin").innerHTML = "";
-              } else {
-                // alert("invalid");
-                // flag = 0;
-                validate = false;
-                // alert(validate);
-                document.getElementById("error_pin").innerHTML =
-                  "Invalid Pincode";
-              }
-              //  alert("ajax : " +flag);
-            },
-          });
-        }
+
+
+          //PIN Code Validation
+        //   let flag = 0;
+
+        //   $.ajax({
+        //     type: "GET",
+        //     url:
+        //       "https://dev-placeservice.basichomeloan.com/api/v1/Pin/pincodedeatils/" +
+        //       p,
+        //     data: "",
+        //     cache: false,
+        //     dataType: "json",
+        //     async: false,
+        //     success: function (res) {
+              
+        //       console.log(res);
+        //       if (res.result) {
+                
+        //         document.getElementById("error_pin").innerHTML = "";
+        //       } else {
+                
+        //         validate = false;
+               
+        //         document.getElementById("error_pin").innerHTML =
+        //           "Invalid Pincode";
+        //       }
+              
+        //     },
+        //   });
+        // }
 
         document.getElementById("hide").style.display = "none";
 
@@ -557,7 +558,7 @@
             },
           });
         }
-      }
+      }}
     </script>
 
     <main class="home">
@@ -840,15 +841,15 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row otp_tab2" id="OTP" style="display: none">
-                    <!-- style="display:none" -->
+                  <!-- <div class="row otp_tab2" id="OTP" style="display: none">
+                  
                     <p
                       class="form-title tab-title fw-normal"
                       id="mob_session_landing"
                     ></p>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                      <span class="landingmessage_otp"></span>
-                      <div class="inputbox" style="margin-bottom: 0">
+                      <span class="landingmessage_otp"></span> -->
+                      <!-- <div class="inputbox" style="margin-bottom: 0">
                         <label class="">Otp</label>
 
                         <div style="display: flex">
@@ -870,9 +871,9 @@
                             >30 Sec</span
                           >
                         </div>
-                      </div>
+                      </div> -->
 
-                      <div
+                      <!-- <div
                         class="inputbox resend-otp-text"
                         style="margin-top: 15px"
                       >
@@ -900,9 +901,9 @@
                             font-family: 'Inter', sans-serif;
                           "
                         ></p>
-                      </div>
+                      </div> -->
 
-                      <div class="form-check otp-checkbox">
+                      <!-- <div class="form-check otp-checkbox">
                         <input
                           type="checkbox"
                           id="consent2"
@@ -910,18 +911,18 @@
                           value="yes"
                           class="form-check-input"
                           checked=""
-                        />
-                        <label for="consent2" class="form-check-label"
+                        /> -->
+                        <!-- <label for="consent2" class="form-check-label"
                           >I agree to
                           <a href="terms-and-conditions.html"
                             >Terms &amp; Conditions
                           </a></label
-                        ><br />
-                      </div>
+                        ><br /> -->
+                      <!-- </div>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="form-button">
-                    <input
+                    <!-- <input
                       type="button"
                       name="Submit"
                       value="SUBMIT"
@@ -939,7 +940,7 @@
                         text-transform: uppercase;
                         font-weight: 600;
                       "
-                    />
+                    /> -->
                     <input
                       type="button"
                       name="Next"
