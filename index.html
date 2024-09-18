@@ -14,7 +14,6 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    
     <script
       src="https://kit.fontawesome.com/c521e77e5d.js"
       crossorigin="anonymous"
@@ -138,25 +137,25 @@
         cursor: pointer;
       }
     </style>
-<script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    const closeButton = document.querySelector('.close');
-    const formDiv = document.querySelector('.formDiv2');
-    const toggleButtons = document.querySelectorAll('.toggleForm');
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const closeButton = document.querySelector(".close");
+        const formDiv = document.querySelector(".formDiv2");
+        const toggleButtons = document.querySelectorAll(".toggleForm");
 
-    closeButton.addEventListener('click', () => {
-        formDiv.removeAttribute('id');
-        closeButton.classList.add('hidden');
-    });
-
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            formDiv.setAttribute('id', 'formDiv');
-            closeButton.classList.remove('hidden');
+        closeButton.addEventListener("click", () => {
+          formDiv.removeAttribute("id");
+          closeButton.classList.add("hidden");
         });
-    });
-});
-  </script>
+
+        toggleButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            formDiv.setAttribute("id", "formDiv");
+            closeButton.classList.remove("hidden");
+          });
+        });
+      });
+    </script>
     <script>
       function myChange(err) {
         document.getElementById(err).innerHTML =
@@ -165,9 +164,9 @@
 
       // function resendOTP() {
       //   var mobile_saved = sessionStorage.getItem("mobile");
-    
+
       //   document.getElementById("error_otp").innerHTML = "";
-       
+
       //   $.ajax({
       //     type: "post",
       //     url: "https://g6fOSCtelwTJ.com/Forms/resend_otp",
@@ -177,7 +176,7 @@
       //     dataType: "json",
       //     async: false,
       //     success: function (data) {
-      //       var seconds = 60; 
+      //       var seconds = 60;
       //       var countdown = setInterval(function () {
       //         seconds--;
       //         document.getElementById("countersss2").textContent =
@@ -331,19 +330,16 @@
         //   document.getElementById("error_pin").innerHTML =
         //     "Please enter 6 digits pincode";
         // } else {
-          // if(!p.match(pincode))
-          // {
-          //     validate = false;
-          //     document.getElementById("error_pin").innerHTML = "Enter 6 digit pincode";
-          // }
+        // if(!p.match(pincode))
+        // {
+        //     validate = false;
+        //     document.getElementById("error_pin").innerHTML = "Enter 6 digit pincode";
+        // }
 
-          // else document.getElementById("error_pin").innerHTML = "";
-          // alert('entered');
+        // else document.getElementById("error_pin").innerHTML = "";
+        // alert('entered');
 
-
-
-
-          //PIN Code Validation
+        //PIN Code Validation
         //   let flag = 0;
 
         //   $.ajax({
@@ -356,19 +352,19 @@
         //     dataType: "json",
         //     async: false,
         //     success: function (res) {
-              
+
         //       console.log(res);
         //       if (res.result) {
-                
+
         //         document.getElementById("error_pin").innerHTML = "";
         //       } else {
-                
+
         //         validate = false;
-               
+
         //         document.getElementById("error_pin").innerHTML =
         //           "Invalid Pincode";
         //       }
-              
+
         //     },
         //   });
         // }
@@ -387,34 +383,32 @@
 
           // alert(csrfHash);
           $.ajax({
-    type: "post",
-    url: "https://www.parislondrestrain.fr/admin/home-loan/save",
-    data: JSON.stringify({
-        name: f,
-        lastname: l,
-        email: e,
-        mobile: c,
-        loanamount: lo,
-        property_city: p,
-        loantype:l_t,
-    }),
-    contentType: "application/json",
-    success: function(response) {
-      $('#successMessage1').show();
-      $('#formId1')[0].reset();
-     
-        console.log(response);
-    },
-    error: function(xhr, status, error) {
-        console.error('Error:', error);
-    }
-});
+            type: "post",
+            url: "https://www.parislondrestrain.fr/admin/home-loan/save",
+            data: JSON.stringify({
+              name: f,
+              lastname: l,
+              email: e,
+              mobile: c,
+              loanamount: lo,
+              property_city: p,
+              loantype: l_t,
+            }),
+            contentType: "application/json",
+            success: function (response) {
+              $("#successMessage1").show();
+              $("#formId1")[0].reset();
 
+              console.log(response);
+            },
+            error: function (xhr, status, error) {
+              console.error("Error:", error);
+            },
+          });
+        }
+      }
 
-}}
-
-
-function formValidation() {
+      function formValidation() {
         // alert("entered func");
         var validate = true;
         // alert(validate);
@@ -551,19 +545,16 @@ function formValidation() {
         //   document.getElementById("error_pin").innerHTML =
         //     "Please enter 6 digits pincode";
         // } else {
-          // if(!p.match(pincode))
-          // {
-          //     validate = false;
-          //     document.getElementById("error_pin").innerHTML = "Enter 6 digit pincode";
-          // }
+        // if(!p.match(pincode))
+        // {
+        //     validate = false;
+        //     document.getElementById("error_pin").innerHTML = "Enter 6 digit pincode";
+        // }
 
-          // else document.getElementById("error_pin").innerHTML = "";
-          // alert('entered');
+        // else document.getElementById("error_pin").innerHTML = "";
+        // alert('entered');
 
-
-
-
-          //PIN Code Validation
+        //PIN Code Validation
         //   let flag = 0;
 
         //   $.ajax({
@@ -576,19 +567,19 @@ function formValidation() {
         //     dataType: "json",
         //     async: false,
         //     success: function (res) {
-              
+
         //       console.log(res);
         //       if (res.result) {
-                
+
         //         document.getElementById("error_pin").innerHTML = "";
         //       } else {
-                
+
         //         validate = false;
-               
+
         //         document.getElementById("error_pin").innerHTML =
         //           "Invalid Pincode";
         //       }
-              
+
         //     },
         //   });
         // }
@@ -607,31 +598,30 @@ function formValidation() {
 
           // alert(csrfHash);
           $.ajax({
-    type: "post",
-    url: "https://www.parislondrestrain.fr/admin/home-loan/save",
-    data: JSON.stringify({
-        name: f,
-        lastname: l,
-        email: e,
-        mobile: c,
-        loanamount: lo,
-        property_city: p,
-        loantype:l_t,
-    }),
-    contentType: "application/json",
-    success: function(response) {
-      $('#successMessage').show();
-      $('#formId')[0].reset();
-     
-        console.log(response);
-    },
-    error: function(xhr, status, error) {
-        console.error('Error:', error);
-    }
-});
+            type: "post",
+            url: "https://www.parislondrestrain.fr/admin/home-loan/save",
+            data: JSON.stringify({
+              name: f,
+              lastname: l,
+              email: e,
+              mobile: c,
+              loanamount: lo,
+              property_city: p,
+              loantype: l_t,
+            }),
+            contentType: "application/json",
+            success: function (response) {
+              $("#successMessage").show();
+              $("#formId")[0].reset();
 
-
-}}
+              console.log(response);
+            },
+            error: function (xhr, status, error) {
+              console.error("Error:", error);
+            },
+          });
+        }
+      }
     </script>
 
     <main class="home">
@@ -658,7 +648,7 @@ function formValidation() {
                     <a href="#">Login/Signup</a>
                   </li>
                   <hr />
-                  
+
                   <li>Signout</li>
                 </ul>
               </div>
@@ -686,13 +676,14 @@ function formValidation() {
 
                 <p
                   class="cm-para typ-white typ-24 mp-0 ab-none inner-page-banner-para text-grey2 b banner_text1 wow fadeInUp"
-                  data-wow-delay="0.4s" 
+                  data-wow-delay="0.4s"
                 >
                   Fast, Hassle-Free Home Loans
                 </p>
                 <p
                   class="cm-para typ-white typ-24 mp-0 ab-none inner-page-banner-para text-grey2 b banner_text1 wow fadeInUp"
-                  data-wow-delay="0.4s" style="color: white; z-index: 2;"
+                  data-wow-delay="0.4s"
+                  style="color: white; z-index: 2"
                 >
                   Best Interest Rates | Quick Eligibility Check | EMI Calculator
                   | End-To-End Agent Support
@@ -700,23 +691,38 @@ function formValidation() {
               </div>
             </div>
             <div class="col-lg-6 align-self-end formUpperDiv">
-              
-
-              <form name="landing-form" enctype="multipart/form-data" id="formId">
-               <!-- Close Button -->
-<span class="close hidden">&times;</span>
+              <form
+                name="landing-form"
+                enctype="multipart/form-data"
+                id="formId"
+              >
+                <!-- Close Button -->
+                <span class="close hidden">&times;</span>
                 <input
                   type="hidden"
                   class="txt_csrfname"
                   name="ci_csrf_token"
                   value=""
                 />
-                <div class="bs-form typ-reach typ-banner-form formDiv2" >
-                  <div id="successMessage" style="display:none; color: green; margin: 15px; font-weight: 700;">Form submitted successfully!</div>
+                <div class="bs-form typ-reach typ-banner-form formDiv2">
+                  <div
+                    id="successMessage"
+                    style="
+                      display: none;
+                      color: green;
+                      margin: 15px;
+                      font-weight: 700;
+                    "
+                  >
+                    Form submitted successfully!
+                  </div>
                   <!-- <p class="form-title tab-title fw-bold">
                     Tell us about your requirements
                   </p> -->
-                  <p class="form-check-label form-title tab-title fw-bold" for="inlineRadio1">
+                  <p
+                    class="form-check-label form-title tab-title fw-bold"
+                    for="inlineRadio1"
+                  >
                     Select Your Loan Type
                   </p>
 
@@ -927,7 +933,7 @@ function formValidation() {
                     ></p>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                       <span class="landingmessage_otp"></span> -->
-                      <!-- <div class="inputbox" style="margin-bottom: 0">
+                  <!-- <div class="inputbox" style="margin-bottom: 0">
                         <label class="">Otp</label>
 
                         <div style="display: flex">
@@ -951,7 +957,7 @@ function formValidation() {
                         </div>
                       </div> -->
 
-                      <!-- <div
+                  <!-- <div
                         class="inputbox resend-otp-text"
                         style="margin-top: 15px"
                       >
@@ -981,7 +987,7 @@ function formValidation() {
                         ></p>
                       </div> -->
 
-                      <!-- <div class="form-check otp-checkbox">
+                  <!-- <div class="form-check otp-checkbox">
                         <input
                           type="checkbox"
                           id="consent2"
@@ -990,13 +996,13 @@ function formValidation() {
                           class="form-check-input"
                           checked=""
                         /> -->
-                        <!-- <label for="consent2" class="form-check-label"
+                  <!-- <label for="consent2" class="form-check-label"
                           >I agree to
                           <a href="terms-and-conditions.html"
                             >Terms &amp; Conditions
                           </a></label
                         ><br /> -->
-                      <!-- </div>
+                  <!-- </div>
                     </div>
                   </div> -->
                   <div class="form-button">
@@ -1041,8 +1047,8 @@ function formValidation() {
       </section>
       <!-- banner end -->
 
-<!-- The Modal -->
-<!-- <div  class="modal formModal" style="display: flex;">
+      <!-- The Modal -->
+      <!-- <div  class="modal formModal" style="display: flex;">
   <div class="modal-content">
       
       
@@ -1055,26 +1061,26 @@ function formValidation() {
           <ul id="counter">
             <li>
               <div class="inner-box">
-                <span class="count plus" data-count="650"> 650 </span>
-                <p class="counter-txt">Districts</p>
+                <span class="count plus" data-count="700"> 750 </span>
+                <p class="counter-txt">Districts Reached</p>
               </div>
             </li>
             <li>
               <div class="inner-box">
-                <span class="count plus" data-count="200000"> 2,00,000 </span>
+                <span class="count plus" data-count="250000"> 2,50,000 </span>
                 <p class="counter-txt">Families served</p>
               </div>
             </li>
             <li>
               <div class="inner-box">
-                <span class="count cr-plus" data-count="80000"> 80,000 </span>
+                <span class="count cr-plus" data-count="90000"> 90,000 </span>
                 <p class="counter-txt">Applications processed</p>
               </div>
             </li>
             <li>
               <div class="inner-box">
-                <span class="count plus" data-count="90"> 90 </span>
-                <p class="counter-txt">Lending partners</p>
+                <span class="count plus" data-count="100"> 100 </span>
+                <p class="counter-txt">Trusted Lending partners</p>
               </div>
             </li>
           </ul>
@@ -1097,8 +1103,7 @@ function formValidation() {
                 class="bs-heading typ-subheading form-subhd wow fadeInUp"
                 data-wow-delay="0.2s"
               >
-                We help make Your Dream Home a Reality. Discover your ideal home
-                loan easily at great rates and move in quickly!.
+                Transform Your Home Buying Experience.
               </h2>
             </div>
           </div>
@@ -1111,12 +1116,17 @@ function formValidation() {
             >
               <div class="bs-card height">
                 <div class="card-icon">
-                  <span class="icn icon-hand-money"
-                    >
-                  <img src="assets/images/acquisition_6028861.png" alt="Icon" style="height: 100px; width: 100px; margin-left: 58px;"/>
+                  <span class="icn icon-hand-money">
+                    <img
+                      src="assets/images/acquisition_6028861.png"
+                      alt="Icon"
+                      style="height: 100px; width: 100px; margin-left: 58px"
+                    />
                   </span>
                 </div>
-                <h1 class="card-title" style="text-align: center;">Best Lender Selection</h1>
+                <h1 class="card-title" style="text-align: center">
+                  Find Your Perfect Loan
+                </h1>
                 <!-- <p class="card-para mobile">
               Get free instant and personalized quotes from top lenders in the market and buy your dream home with
               ease.
@@ -1129,13 +1139,17 @@ function formValidation() {
             >
               <div class="bs-card height">
                 <div class="card-icon">
-                  <span class="icn icon-hand-mobile"
-                    >
-                    <img src="assets/images/acquisition_6028861.png" alt="Icon" style="height: 100px; width: 100px; margin-left: 58px;"/>
-                  
+                  <span class="icn icon-hand-mobile">
+                    <img
+                      src="assets/images/acquisition_6028861.png"
+                      alt="Icon"
+                      style="height: 100px; width: 100px; margin-left: 58px"
+                    />
                   </span>
                 </div>
-                <h1 class="card-title" style="text-align: center;">Quick Digital Loan Approvals</h1>
+                <h1 class="card-title" style="text-align: center">
+                  Fast Digital Approvals
+                </h1>
                 <!-- <p class="card-para mobile">
               You can get doorstep delivery of <strong>basic home loans</strong> along with free advisory services
               using our technology from a dedicated relationship manager.
@@ -1148,13 +1162,17 @@ function formValidation() {
             >
               <div class="bs-card height">
                 <div class="card-icon">
-                  <span class="icn icon-hand-mobile-2"
-                    >
-                  
-                    <img src="assets/images/acquisition_6028861.png" alt="Icon" style="height: 100px; width: 100px; margin-left: 58px;"/>
+                  <span class="icn icon-hand-mobile-2">
+                    <img
+                      src="assets/images/acquisition_6028861.png"
+                      alt="Icon"
+                      style="height: 100px; width: 100px; margin-left: 58px"
+                    />
                   </span>
                 </div>
-                <h1 class="card-title" style="text-align: center;">Real-Time Loan Tracking</h1>
+                <h1 class="card-title" style="text-align: center">
+                  Track Your Loan in Real-Time
+                </h1>
                 <!--  <p class="card-para mobile">
               Our in-house online loan tracker showcases your home loan journey and notifies you of your loan
               application status from the login to the sanction stage.
@@ -1167,13 +1185,17 @@ function formValidation() {
             >
               <div class="bs-card height">
                 <div class="card-icon">
-                  <span class="icn icon-user-tie"
-                    >
-                  
-                    <img src="assets/images/acquisition_6028861.png" alt="Icon" style="height: 100px; width: 100px; margin-left: 58px;"/>
+                  <span class="icn icon-user-tie">
+                    <img
+                      src="assets/images/acquisition_6028861.png"
+                      alt="Icon"
+                      style="height: 100px; width: 100px; margin-left: 58px"
+                    />
                   </span>
                 </div>
-                <h1 class="card-title" style="text-align: center;">Dedicated Agent Support</h1>
+                <h1 class="card-title" style="text-align: center">
+                  Personalized Support
+                </h1>
                 <!-- <p class="card-para mobile">
               We utilize a special tool for agents to handle customer profiles for live tracking of cases with
               dedicated RM support.
@@ -1183,7 +1205,7 @@ function formValidation() {
           </div>
           <div class="row marg-top-btn">
             <div class="col-xl-12 text-center toggleForm">
-              <a  href="javascript:void(0)" class="bs-btn get "> get started </a>
+              <a href="javascript:void(0)" class="bs-btn get"> get started </a>
             </div>
             &nbsp;
           </div>
@@ -1934,7 +1956,9 @@ function formValidation() {
             </div>
             <div class="col-md-12">
               <div class="tab-nav typ-single text-center mt-4 toggleForm">
-                <a href="javascript:void(0)" class="bs-btn text-uppercase ">Get Started</a>
+                <a href="javascript:void(0)" class="bs-btn text-uppercase"
+                  >Get Started</a
+                >
               </div>
             </div>
             &nbsp;
@@ -1946,9 +1970,8 @@ function formValidation() {
 
       <section class="lyt-section typ-lp-eligibility">
         <h1
-          class="bs-heading typ-center mb-30 wow fadeInUp "
+          class="bs-heading typ-center mb-30 wow fadeInUp"
           data-wow-delay="0.2s"
-         
         >
           Check Eligibility
         </h1>
@@ -1969,7 +1992,13 @@ function formValidation() {
                 "
               >
                 <a href="#"> </a>
-                <div class="container" style=" background-color: rgba(0, 0, 0, 0.5); padding-bottom: 20px;">
+                <div
+                  class="container"
+                  style="
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding-bottom: 20px;
+                  "
+                >
                   <a href="#">
                     <h1 class="bs-heading cont-typ typ-white">
                       Choose The Best Home Loan From The Comfort Of Your House!
@@ -2011,8 +2040,8 @@ function formValidation() {
                 class="bs-heading typ-subheading form-subhd emi_m wow fadeInUp"
                 data-wow-delay="0.2s"
               >
-                Calculate your EMIs in real-time and plan your finances smartly
-                with expert guidance at every step.
+                Easily compute your EMIs in real-time and get expert guidance to
+                manage your finances effectively.
               </h2>
             </div>
           </div>
@@ -2026,7 +2055,8 @@ function formValidation() {
                 <div>
                   <h1 class="bs-heading">EMI Calculator</h1>
                   <h2 class="bs-heading typ-subheading form-subhd">
-                    Calculate. Plan. Simplify Your Home Loan!
+                    Calculate, plan, and simplify your loan with real-time EMI
+                    estimates!
                   </h2>
                 </div>
                 <div class="row bs-form">
@@ -2220,7 +2250,7 @@ function formValidation() {
       </section>
       <!--EMI Calculator End-->
     </main>
-  <!-- <script>
+    <!-- <script>
     // Open modal
 document.querySelectorAll('.openModalBtn').forEach(button => {
     button.onclick = function() {
@@ -2248,7 +2278,7 @@ window.onclick = function(event) {
     });
 };
   </script> -->
-  
+
     <!-- footer start -->
     <!-- footer end -->
 
@@ -4810,6 +4840,5 @@ window.onclick = function(event) {
         }
       }
     </script>
-   
   </body>
 </html>
