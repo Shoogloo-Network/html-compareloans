@@ -138,7 +138,25 @@
         cursor: pointer;
       }
     </style>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const closeButton = document.querySelector('.close');
+    const formDiv = document.querySelector('.formDiv2');
+    const toggleButtons = document.querySelectorAll('.toggleForm');
 
+    closeButton.addEventListener('click', () => {
+        formDiv.removeAttribute('id');
+        closeButton.classList.add('hidden');
+    });
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            formDiv.setAttribute('id', 'formDiv');
+            closeButton.classList.remove('hidden');
+        });
+    });
+});
+  </script>
     <script>
       function myChange(err) {
         document.getElementById(err).innerHTML =
@@ -176,7 +194,227 @@
       //   });
       // }
 
-      function formValidation() {
+      function formValidation1() {
+        // alert("entered func");
+        var validate = true;
+        // alert(validate);
+
+        let loan_type = document.forms["landing-form"]["radioyesno"];
+        // alert(loan_type);
+        let l_t = loan_type.value;
+        // alert(l_t);
+
+        if (l_t == "" || l_t == null) {
+          validate = false;
+          //alert(p);
+
+          document.getElementById("error_loan_type1").innerHTML =
+            "Please select your loan type";
+          //return false;
+        } else document.getElementById("error_loan_type1").innerHTML = "";
+
+        let first = document.forms["landing-form"]["first_n"];
+        let f = first.value;
+
+        let dsauserids = document.forms["landing-form"]["dsauserid"];
+        let dsauserid = dsauserids.value;
+        //alert(first);
+        let last = document.forms["landing-form"]["last_n"];
+        let l = last.value;
+        //alert(last);
+        let email = document.forms["landing-form"]["email"];
+        let e = email.value;
+        //alert(email);
+        let contact = document.forms["landing-form"]["contact"];
+        let c = contact.value;
+        //alert(contact);
+        //   let msg = document.forms["landing-form"]["msg"]
+        //   let m = msg.value;
+
+        // alert("all data rec");
+
+        if (f == "" || f == null) {
+          //alert(y);
+          // mob.required = true;
+          validate = false;
+          document.getElementById("error_first_n1").innerHTML =
+            "Please enter first name";
+          //return false;
+        } else document.getElementById("error_first_n1").innerHTML = "";
+
+        //alert("1");
+
+        if (l == "" || l == null) {
+          // alert(l);
+          // mob.required = true;
+          validate = false;
+          document.getElementById("error_last_n1").innerHTML =
+            "Please enter last name";
+          //return false;
+        } else document.getElementById("error_last_n1").innerHTML = "";
+
+        //alert("2");
+
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (e == "" || e == null) {
+          //alert(y);
+          // mob.required = true;
+          validate = false;
+          document.getElementById("error_email1").innerHTML =
+            "Please enter email id";
+          //return false;
+        } else {
+          if (!e.match(mailformat)) {
+            validate = false;
+            document.getElementById("error_email1").innerHTML =
+              "Please enter email id";
+          } else {
+            // alert("valid");
+            document.getElementById("error_email1").innerHTML = "";
+          }
+        }
+
+        var phoneno = /^\d{10}$/;
+
+        if (c == "" || c == null) {
+          //alert(y);
+          // mob.required = true;
+          validate = false;
+          document.getElementById("error_contact1").innerHTML =
+            "Please enter mobile number";
+          //return false;
+        } else {
+          if (!c.match(phoneno)) {
+            validate = false;
+            document.getElementById("error_contact1").innerHTML =
+              "Please enter mobile number";
+          } else document.getElementById("error_contact1").innerHTML = "";
+        }
+
+        let loan = document.forms["landing-form"]["loan"];
+        let lo = loan.value;
+        let pin = document.forms["landing-form"]["pin"];
+        let p = pin.value;
+
+        if (isNaN(lo) || lo < 1000000 || lo > 100000000) {
+          //alert(y);
+          // mob.required = true;
+          validate = false;
+          document.getElementById("error_loan1").innerHTML =
+            "Enter loan amount from 10 Lac upto 10 Cr.";
+          //return false;
+        } else {
+          //var valueToNumber = ($('#loan').val()).replace(',', '').replace(',', '').replace(',', '');
+          // alert(valueToNumber);
+          // var principalValue = valueToNumber.replace(' ', '').replace(' ', '').replace(' ', '').replace(' ', '').replace(' ', '').replace(' ', '').replace(' ', '').replace(' ', '').replace(' ', '');
+          // alert(principalValue);
+
+          // var arr = ($('#loan').val()).split(',');
+          // var out = new Array();
+          // for(var cnt=0;cnt<arr.length;cnt++){
+          //   if(isNaN(arr[cnt])==false){
+          //     out.push(arr[cnt]);
+          //   }
+          // }
+          // alert(Number(out.join('')));
+
+          // ($('#loan').val()).replace(/.(?=(..)*...$)/g, '$&,');
+
+          document.getElementById("error_loan1").innerHTML = "";
+        }
+
+        //var pincode = /^\d{6}$/;
+
+        // if ((p == "" || p == null) && p.length < 6) {
+        //   validate = false;
+        //   document.getElementById("error_pin").innerHTML =
+        //     "Please enter 6 digits pincode";
+        // } else {
+          // if(!p.match(pincode))
+          // {
+          //     validate = false;
+          //     document.getElementById("error_pin").innerHTML = "Enter 6 digit pincode";
+          // }
+
+          // else document.getElementById("error_pin").innerHTML = "";
+          // alert('entered');
+
+
+
+
+          //PIN Code Validation
+        //   let flag = 0;
+
+        //   $.ajax({
+        //     type: "GET",
+        //     url:
+        //       "https://dev-placeservice.basichomeloan.com/api/v1/Pin/pincodedeatils/" +
+        //       p,
+        //     data: "",
+        //     cache: false,
+        //     dataType: "json",
+        //     async: false,
+        //     success: function (res) {
+              
+        //       console.log(res);
+        //       if (res.result) {
+                
+        //         document.getElementById("error_pin").innerHTML = "";
+        //       } else {
+                
+        //         validate = false;
+               
+        //         document.getElementById("error_pin").innerHTML =
+        //           "Invalid Pincode";
+        //       }
+              
+        //     },
+        //   });
+        // }
+
+        document.getElementById("hide1").style.display = "none";
+
+        if (validate === false) {
+          return false;
+        } else {
+          if ($("#Nextdisable1").prop("disabled")) {
+            return false;
+          }
+          var csrfName = $(".txt_csrfname1").attr("name");
+          var csrfHash = $(".txt_csrfname1").val();
+          $("#Nextdisable1").prop("disabled", true);
+
+          // alert(csrfHash);
+          $.ajax({
+    type: "post",
+    url: "https://www.parislondrestrain.fr/admin/home-loan/save",
+    data: JSON.stringify({
+        name: f,
+        lastname: l,
+        email: e,
+        mobile: c,
+        loanamount: lo,
+        property_city: p,
+        loantype:l_t,
+    }),
+    contentType: "application/json",
+    success: function(response) {
+      $('#successMessage1').show();
+      $('#formId1')[0].reset();
+     
+        console.log(response);
+    },
+    error: function(xhr, status, error) {
+        console.error('Error:', error);
+    }
+});
+
+
+}}
+
+
+function formValidation() {
         // alert("entered func");
         var validate = true;
         // alert(validate);
@@ -461,23 +699,24 @@
                 </p>
               </div>
             </div>
-            <div class="col-lg-6 align-self-end">
+            <div class="col-lg-6 align-self-end formUpperDiv">
               
 
               <form name="landing-form" enctype="multipart/form-data" id="formId">
-               
+               <!-- Close Button -->
+<span class="close hidden">&times;</span>
                 <input
                   type="hidden"
                   class="txt_csrfname"
                   name="ci_csrf_token"
                   value=""
                 />
-                <div class="bs-form typ-reach typ-banner-form">
+                <div class="bs-form typ-reach typ-banner-form formDiv2" >
                   <div id="successMessage" style="display:none; color: green; margin: 15px; font-weight: 700;">Form submitted successfully!</div>
-                  <p class="form-title tab-title fw-bold">
+                  <!-- <p class="form-title tab-title fw-bold">
                     Tell us about your requirements
-                  </p>
-                  <p class="form-check-label" for="inlineRadio1">
+                  </p> -->
+                  <p class="form-check-label form-title tab-title fw-bold" for="inlineRadio1">
                     Select Your Loan Type
                   </p>
 
@@ -802,350 +1041,13 @@
       </section>
       <!-- banner end -->
 
-
 <!-- The Modal -->
-<div  class="modal formModal" style="display: none;">
+<!-- <div  class="modal formModal" style="display: flex;">
   <div class="modal-content">
-      <span class="close">&times;</span>
-      <!-- The Form -->
-      <div class=" align-self-center formUpperDiv">
-              
-
-        <form name="landing-form" enctype="multipart/form-data" id="formId">
-         
-          <input
-            type="hidden"
-            class="txt_csrfname"
-            name="ci_csrf_token"
-            value=""
-          />
-          <div class="bs-form typ-reach typ-banner-form " id="formDiv">
-            <div id="successMessage" style="display:none; color: green; margin: 15px; font-weight: 700;">Form submitted successfully!</div>
-            <p class="form-title tab-title fw-bold">
-              Tell us about your requirements
-            </p>
-            <p class="form-check-label" for="inlineRadio1">
-              Select Your Loan Type
-            </p>
-
-            <div class="messagesdons"></div>
-
-            <div class="row otp_tab1">
-              <div class="radio-box">
-                <div class="form-check">
-                  <input
-                    onchange='myChange("error_loan_type")'
-                    class="form-check-input radioyesno"
-                    type="radio"
-                    name="radioyesno"
-                    value="Home Loan"
-                    id="propertyDefault1"
-                  />
-                  <label
-                    tabindex="1"
-                    class="form-check-label"
-                    for="propertyDefault1"
-                  >
-                    HOME LOAN
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    onchange='myChange("error_loan_type")'
-                    class="form-check-input radioyesno"
-                    type="radio"
-                    name="radioyesno"
-                    value="Loan Against Property"
-                    id="propertyDefault2"
-                  />
-                  <label
-                    tabindex="2"
-                    class="form-check-label"
-                    for="propertyDefault2"
-                  >
-                    LOAN AGAINST PROPERTY
-                  </label>
-                </div>
-                <p
-                  id="error_loan_type"
-                  style="
-                    color: red;
-                    font-size: 15px;
-                    font-family: 'Inter', sans-serif;
-                  "
-                ></p>
-              </div>
-            </div>
-            <div class="row otp_tab1">
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div class="inputbox">
-                  <label
-                    >FIRST NAME <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="first_n"
-                    name="first_n"
-                    class="form-control-plaintext"
-                    oninput="firstNameValidation()"
-                    autocomplete="off"
-                  />
-                  <p
-                    id="error_first_n"
-                    style="
-                      color: red;
-                      font-size: 15px;
-                      font-family: 'Inter', sans-serif;
-                    "
-                  ></p>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div class="inputbox">
-                  <label
-                    >LAST NAME <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="last_n"
-                    name="last_n"
-                    class="form-control-plaintext"
-                    oninput="lastNameValidation()"
-                    autocomplete="off"
-                  />
-                  <p
-                    id="error_last_n"
-                    style="
-                      color: red;
-                      font-size: 15px;
-                      font-family: 'Inter', sans-serif;
-                    "
-                  ></p>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div class="inputbox">
-                  <label
-                    >EMAIL ID <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    class="form-control-plaintext"
-                    oninput="emailvalidation()"
-                    autocomplete="off"
-                  />
-                  <p
-                    id="error_email"
-                    style="
-                      color: red;
-                      font-size: 15px;
-                      font-family: 'Inter', sans-serif;
-                    "
-                  ></p>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <input
-                  type="hidden"
-                  name="dsauserid"
-                  id="dsauserid"
-                  class="dsauserid"
-                  value="BAE0012BC"
-                />
-                <div class="inputbox">
-                  <label
-                    >CONTACT NUMBER
-                    <span class="text-danger">*</span></label
-                  >
-                  <input
-                    maxlength="10"
-                    type="text"
-                    class="form-control-plaintext"
-                    id="contact"
-                    name="contact"
-                    oninput="contactValidation()"
-                    autocomplete="off"
-                  />
-                  <p
-                    id="error_contact"
-                    style="
-                      color: red;
-                      font-size: 15px;
-                      font-family: 'Inter', sans-serif;
-                    "
-                  ></p>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div class="inputbox">
-                  <label
-                    >LOAN AMOUNT <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    name="loan"
-                    class="form-control"
-                    id="loans"
-                    oninput="loanvalidation()"
-                    autocomplete="off"
-                  />
-                  <p
-                    id="error_loan"
-                    style="
-                      color: red;
-                      font-size: 15px;
-                      font-family: 'Inter', sans-serif;
-                    "
-                  ></p>
-                  <span id="hide">Min. Loan Amount - 30 Lacs</span>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div class="inputbox">
-                  <label
-                    >PROPERTY PINCODE
-                    <span class="text-danger">*</span></label
-                  >
-                  <input
-                    maxlength="6"
-                    type="text"
-                    id="pinvalidation"
-                    name="pin"
-                    class="form-control-plaintext"
-                    autocomplete="off"
-                  />
-                  <p
-                    id="error_pin"
-                    style="
-                      color: red;
-                      font-size: 15px;
-                      font-family: 'Inter', sans-serif;
-                    "
-                  ></p>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="row otp_tab2" id="OTP" style="display: none">
-            
-              <p
-                class="form-title tab-title fw-normal"
-                id="mob_session_landing"
-              ></p>
-              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                <span class="landingmessage_otp"></span> -->
-                <!-- <div class="inputbox" style="margin-bottom: 0">
-                  <label class="">Otp</label>
-
-                  <div style="display: flex">
-                    <input
-                      style="float: right"
-                      onchange='myChange("error_otp")'
-                      type="text"
-                      maxlength="4"
-                      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                      class="form-control-plaintext"
-                      id="landing_form_otp"
-                      name="landing_form_otp"
-                      placeholder="XXXX"
-                    />
-                    <span
-                      class="sec countersss"
-                      id="countersss2"
-                      style="float: right; width: 15%"
-                      >30 Sec</span
-                    >
-                  </div>
-                </div> -->
-
-                <!-- <div
-                  class="inputbox resend-otp-text"
-                  style="margin-top: 15px"
-                >
-                  <a
-                    onclick="return resendOTP()"
-                    id="form_resend_otp"
-                    style="
-                      background-color: #04b6fe;
-                      border-color: #04b6fe;
-                      color: #fff;
-                      padding: 10px 40px;
-                      border-radius: 30px;
-                      text-transform: uppercase;
-                      font-weight: 600;
-                    "
-                  >
-                    Resend OTP
-                  </a>
-                  <p
-                    id="error_otp"
-                    style="
-                      float: right;
-                      color: red;
-                      font-size: 15px;
-                      font-family: 'Inter', sans-serif;
-                    "
-                  ></p>
-                </div> -->
-
-                <!-- <div class="form-check otp-checkbox">
-                  <input
-                    type="checkbox"
-                    id="consent2"
-                    name="consent2"
-                    value="yes"
-                    class="form-check-input"
-                    checked=""
-                  /> -->
-                  <!-- <label for="consent2" class="form-check-label"
-                    >I agree to
-                    <a href="terms-and-conditions.html"
-                      >Terms &amp; Conditions
-                    </a></label
-                  ><br /> -->
-                <!-- </div>
-              </div>
-            </div> -->
-            <div class="form-button">
-              <!-- <input
-                type="button"
-                name="Submit"
-                value="SUBMIT"
-                id="otp_tab2_submit"
-                class="otp_tab2"
-                style="
-                  display: none;
-                  text-align: right;
-                  margin-left: auto;
-                  background-color: #04b6fe;
-                  border-color: #04b6fe;
-                  color: #fff;
-                  padding: 10px 40px;
-                  border-radius: 30px;
-                  text-transform: uppercase;
-                  font-weight: 600;
-                "
-              /> -->
-              <input
-                type="button"
-                name="Next"
-                value="Submit"
-                class="btn btn-primary-custom otp_tab1"
-                id="Nextdisable"
-                onclick=" return formValidation()"
-              />
-            </div>
-          </div>
-        </form>
-        <img
-          src="assets/images/homeloan/topBanner.png"
-          alt=""
-          class="desktop-hide"
-        />
-      </div>
+      
+      
   </div>
-</div>
+</div> -->
 
       <!-- mod-counter start -->
       <section class="mod-counter">
@@ -1280,8 +1182,8 @@
             </div>
           </div>
           <div class="row marg-top-btn">
-            <div class="col-xl-12 text-center">
-              <a  href="javascript:void(0);" class="bs-btn get openModalBtn"> get started </a>
+            <div class="col-xl-12 text-center toggleForm">
+              <a  href="javascript:void(0)" class="bs-btn get "> get started </a>
             </div>
             &nbsp;
           </div>
@@ -2031,8 +1933,8 @@
               </div>
             </div>
             <div class="col-md-12">
-              <div class="tab-nav typ-single text-center mt-4 openModalBtn">
-                <a href="javascript:void(0);" class="bs-btn text-uppercase ">Get Started</a>
+              <div class="tab-nav typ-single text-center mt-4 toggleForm">
+                <a href="javascript:void(0)" class="bs-btn text-uppercase ">Get Started</a>
               </div>
             </div>
             &nbsp;
@@ -2082,7 +1984,7 @@
                         Eligibility. Get Home Loans That Adapt To You!
                       </p>
                     </h1> </a
-                  ><a href="javascript:void(0);" class="openModalBtn"
+                  ><a href="javascript:void(0)" class="toggleForm"
                     ><button
                       type="button"
                       class="bs-btn text-uppercase btn-eligibility"
@@ -2250,7 +2152,7 @@
                     <div class="tab-nav typ-single">
                       <!-- <button type="button" data-toggle="tab" class="bs-btn text-uppercase"
                                         data-bs-toggle="modal" data-bs-target="#exampleModal">Apply Now</button> -->
-                      <a href="javascript:void(0);" class="openModalBtn"
+                      <a href="javascript:void(0);" class="toggleForm"
                         ><button type="button" class="bs-btn text-uppercase">
                           Apply Now
                         </button></a
@@ -2318,7 +2220,7 @@
       </section>
       <!--EMI Calculator End-->
     </main>
-  <script>
+  <!-- <script>
     // Open modal
 document.querySelectorAll('.openModalBtn').forEach(button => {
     button.onclick = function() {
@@ -2345,7 +2247,7 @@ window.onclick = function(event) {
         }
     });
 };
-  </script>
+  </script> -->
   
     <!-- footer start -->
     <!-- footer end -->
