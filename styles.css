@@ -20990,7 +20990,14 @@ th {
 }
 
 .bs-card .card-icon {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    margin-left: 0px !important;
+}
+
+.icn>img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px !important;
 }
 
 .bs-card .card-icon .icn {
@@ -24364,6 +24371,20 @@ th {
 }
 
 @media only screen and (max-width: 767px) {
+    /* .container{
+        display: flex;
+        flex-direction: column-reverse;
+    } */
+   #successMessage{
+    margin:0px !important;
+    margin-bottom: 40px !important;
+   }
+   .leftSideNavbar{
+    gap: 0 !important;
+    margin-left: 14px;
+   }
+   
+   
     .bs-grid-swiper {
         position: relative
     }
@@ -24390,7 +24411,8 @@ th {
     .bs-grid-swiper .swiper-button-next.next-arrow.grid-arrow {
         right: auto;
         top: -40px;
-        left: 60px
+        left: 60px;
+        display:none;
     }
 
     .bs-grid-swiper .swiper-button-next.next-arrow.swiper-button-disabled {
@@ -24400,7 +24422,8 @@ th {
     .bs-grid-swiper .swiper-button-prev.prev-arrow.grid-arrow {
         right: auto;
         top: -40px;
-        left: 0px
+        left: 0px;
+        display:none;
     }
 
     .bs-grid-swiper .swiper-button-prev.prev-arrow.swiper-button-disabled {
@@ -24887,8 +24910,8 @@ th {
     }
 
     .bs-form-banner .row-height {
-        min-height: auto;
-        flex-direction: column-reverse
+        /* min-height: auto;
+        flex-direction: column-reverse */
     }
 
     .bs-form-banner .row-height .content {
@@ -40488,8 +40511,8 @@ span#hide {
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
-        margin-bottom: 20px;
-        margin-top: -33px !important;
+        /* margin-bottom: 20px; */
+        margin-top: -50px !important;
     }
 
 
@@ -40500,7 +40523,7 @@ span#hide {
 
     .bs-form-banner {
 
-        top: -22px !important;
+        top: -100px !important;
     }
 
 

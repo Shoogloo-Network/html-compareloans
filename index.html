@@ -139,22 +139,51 @@
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
-        const closeButton = document.querySelector(".close");
-        const formDiv = document.querySelector(".formDiv2");
-        const toggleButtons = document.querySelectorAll(".toggleForm");
+  const closeButton = document.querySelector(".close");
+  const formDiv = document.querySelector(".formDiv2");
+  const toggleButtons = document.querySelectorAll(".toggleForm");
+  const toggleButtonsA = document.querySelectorAll(".toggleForm a");
 
-        closeButton.addEventListener("click", () => {
-          formDiv.removeAttribute("id");
-          closeButton.classList.add("hidden");
-        });
+  function handleToggleButtons() {
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.href = "#formP";
+      });
+    });
+  }
+  function handleToggleButtonsA() {
+    toggleButtonsA.forEach(button => {
+      button.addEventListener('click', () => {
+        button.href = "#formP";
+      });
+    });
+  }
 
-        toggleButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            formDiv.setAttribute("id", "formDiv");
-            closeButton.classList.remove("hidden");
-          });
+  function handleResize() {
+    if (window.innerWidth <= 760 || window.innerWidth <= 992) {
+      formDiv.removeAttribute("id");
+      closeButton.classList.add("hidden");
+      handleToggleButtons();
+      handleToggleButtonsA();
+    } else {
+      toggleButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          formDiv.setAttribute("id", "formDiv");
+          closeButton.classList.remove("hidden");
         });
       });
+    }
+  }
+
+  handleResize(); // Initial check
+  window.addEventListener('resize', handleResize); // Check on resize
+
+  closeButton.addEventListener("click", () => {
+    formDiv.removeAttribute("id");
+    closeButton.classList.add("hidden");
+  });
+});
+        
     </script>
     <script>
       function myChange(err) {
@@ -664,7 +693,7 @@
         <div class="container">
           <div class="row row-height">
             <div class="col-lg-6 align-self-center">
-              <div class="content">
+              <div class="content" id="formP">
                 <h1
                   class="bs-heading typ-white mb-30 wow fadeInUp"
                   data-wow-delay="0.2s"
@@ -688,7 +717,7 @@
                 </p>
               </div>
             </div>
-            <div class="col-lg-6 align-self-end formUpperDiv">
+            <div class="col-lg-6 align-self-end formUpperDiv" >
               <form
                 name="landing-form"
                 enctype="multipart/form-data"
@@ -719,7 +748,7 @@
                   </p> -->
                   <p
                     class="form-check-label form-title tab-title fw-bold"
-                    for="inlineRadio1"
+                    for="inlineRadio1" 
                   >
                     Select Your Loan Type
                   </p>
