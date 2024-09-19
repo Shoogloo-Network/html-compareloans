@@ -40642,6 +40642,7 @@ span#hide {
     .bs-heading.typ-subheading.form-subhd {
         font-size: 17px;
         line-height: 24px;
+        text-align: left;
     }
 
     .bs-heading.typ-subheading.form-subhd.emi_m {
