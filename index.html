@@ -188,7 +188,7 @@
     <script>
       function myChange(err) {
         document.getElementById(err).innerHTML =
-          "<span style='color:green;font-size: 15px; font-family: 'Inter', sans-serif;'>Looks good</span>";
+          "<span style='color:green;font-size: 15px; font-family: 'Inter', sans-serif;'></span>";
       }
 
       // function resendOTP() {
@@ -540,7 +540,7 @@
         let pin = document.forms["landing-form"]["pin"];
         let p = pin.value;
 
-        if (isNaN(lo) || lo < 3000000 || lo > 100000000) {
+        if (isNaN(lo) || lo < 500000 || lo > 100000000) {
           //alert(y);
           // mob.required = true;
           validate = false;
@@ -642,7 +642,7 @@
             success: function (response) {
               $("#successMessage").show();
               $("#formId")[0].reset();
-
+location.reload();
               console.log(response);
             },
             error: function (xhr, status, error) {
@@ -923,13 +923,13 @@
                             font-family: 'Inter', sans-serif;
                           "
                         ></p>
-                        <span id="hide">Min. Loan Amount - 30 Lacs</span>
+                        <span id="hide">Min. Loan Amount - 5 Lacs</span>
                       </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                       <div class="inputbox">
                         <label
-                          >PROPERTY PINCODE
+                          >PINCODE
                           <span class="text-danger">*</span></label
                         >
                         <input
@@ -2074,14 +2074,22 @@
               <div class="emi-calculator">
                 <div>
                   <h1 class="bs-heading">EMI Calculator</h1>
-                  <h2 class="bs-heading typ-subheading form-subhd" style="margin-bottom: 10px;">
+                  <p class=" typ-subheading form-subhd" style="margin-bottom: 10px; font-weight: 400;
+                  font-size: 20px;
+                  line-height: 24px;
+                  letter-spacing: -0.025em;
+                  color: #1c1c1c;">
                     Calculate, plan, and simplify your loan with real-time EMI
                     estimates!
-                  </h2>
+                  </p>
                   <p
                 class=" typ-subheading form-subhd emi_m wow fadeInUp"
                 data-wow-delay="0.2s"
-                style="margin-top: 0;"
+                style="margin-top: 0px; font-weight: 400;
+                  font-size: 20px;
+                  line-height: 24px;
+                  letter-spacing: -0.025em;
+                  color: #1c1c1c;"
               >
                 Easily compute your EMIs in real-time and get expert guidance to
                 manage your finances effectively.
@@ -4757,7 +4765,7 @@ window.onclick = function(event) {
             var errorElement = document.getElementById("error_pin");
 
             if (res.result) {
-              errorElement.innerHTML = "Looks good";
+              errorElement.innerHTML = "";
               errorElement.classList.remove("invalid");
               errorElement.classList.add("valid");
               // Additional logic if needed for a valid pin
@@ -4784,7 +4792,7 @@ window.onclick = function(event) {
           // Contact is valid
           text.classList.remove("invalid");
           text.classList.add("valid");
-          text.innerHTML = "Looks good";
+          text.innerHTML = "";
         } else {
           // Contact is invalid
           text.classList.remove("valid");
@@ -4795,7 +4803,7 @@ window.onclick = function(event) {
 
       function isAmountInRange(amount) {
         const numericAmount = parseInt(amount);
-        return numericAmount >= 3000000 && numericAmount <= 100000000;
+        return numericAmount >= 500000 && numericAmount <= 100000000;
       }
 
       function loanvalidation() {
@@ -4806,11 +4814,11 @@ window.onclick = function(event) {
         if (isNaN(lo) || !isAmountInRange(lo)) {
           text.classList.remove("valid");
           text.classList.add("invalid");
-          text.innerHTML = "Please enter loan amount from 30 Lac upto 10 Cr.";
+          text.innerHTML = "Please enter loan amount from 5 Lac upto 10 Cr.";
         } else {
           text.classList.remove("invalid");
           text.classList.add("valid");
-          text.innerHTML = "Looks good";
+          text.innerHTML = "";
         }
       }
 
@@ -4828,7 +4836,7 @@ window.onclick = function(event) {
           // Perform additional validation if needed
           text.classList.remove("invalid");
           text.classList.add("valid");
-          text.innerHTML = "Looks good";
+          text.innerHTML = "";
         }
       }
 
@@ -4846,7 +4854,7 @@ window.onclick = function(event) {
           // Perform additional validation if needed
           text.classList.remove("invalid");
           text.classList.add("valid");
-          text.innerHTML = "Looks good";
+          text.innerHTML = "";
         }
       }
 
@@ -4864,7 +4872,7 @@ window.onclick = function(event) {
           // Perform additional validation if needed
           text.classList.remove("invalid");
           text.classList.add("valid");
-          text.innerHTML = "Looks good";
+          text.innerHTML = "";
         }
       }
     </script>

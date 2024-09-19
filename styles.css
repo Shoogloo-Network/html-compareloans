@@ -20992,6 +20992,7 @@ th {
 .bs-card .card-icon {
     margin-bottom: 20px;
     margin-left: 0px !important;
+    text-align:center;
 }
 
 .icn>img {
