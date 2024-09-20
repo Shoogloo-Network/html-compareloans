@@ -27,31 +27,35 @@
             alt="Logo"
             class="logoImage"
         /></a>
-        <ul class="navBarUl">
+        <!-- <ul class="navBarUl">
           <li><a>Key Features</a></li>
           <li><a>Interest Rate</a></li>
           <li><a>Eligibility</a></li>
           <li><a>EMI Calculator</a></li>
-        </ul>
+        </ul> -->
         <div class="leftSideNavbar">
           <div class="phoneNumderDiv">
             <i class="fa-solid fa-envelope"></i>
-            <p>info@comparehomeloans.in</p>
+            <p>contact@comparehomeloans.in</p>
           </div>
 
-          <div class="userProfileDiv">
-            <div class="user-profile"></div>
-            <div class="login-hover">
-              <ul>
-                <li id="login">
-                  <a href="#">Login/Signup</a>
-                </li>
-                <hr />
-
-                <li>Signout</li>
-              </ul>
-            </div>
-          </div>
+          <select id="nav-select" style="
+          padding: 8px 8px; 
+          font-size: 16px; 
+          background-color: white; 
+          border: 1px solid #ccc; 
+          border-radius: 5px; 
+          cursor: pointer; 
+          background-image: url('./assets/images/icons8-pages-32.png'); /* Path to your logo image */
+          background-repeat: no-repeat;
+          background-position: 5px center;
+          padding-left: 40px; /* Adjust for the logo size */
+          background-size: 20px 20px;">
+          
+          <option selected disabled hidden>Other Pages</option>
+          <option value="./privacy.html">Privacy Policies</option>
+          <option value="./terms.html">Terms & Conditions</option>
+      </select>
         </div>
       </nav>
     </header>
@@ -300,5 +304,13 @@
         </p>
       </div>
     </div>
+    <script>
+        document.getElementById('nav-select').addEventListener('change', function() {
+            const url = this.value;
+            if (url) {
+                window.location.href = url;
+            }
+        });
+      </script>
   </body>
 </html>
