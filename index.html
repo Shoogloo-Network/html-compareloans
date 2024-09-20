@@ -664,7 +664,7 @@
             success: function (response) {
               $("#successMessage").show();
               $("#formId")[0].reset();
-location.reload();
+              window.location.href="./thankyou.html"
               console.log(response);
             },
             error: function (xhr, status, error) {
@@ -684,10 +684,10 @@ location.reload();
             class="logoImage"
           /></a>
           <ul class="navBarUl">
-            <li><a href="#keyFeatures">Key Features</a></li>
-            <li><a href="#interestRate">Interest Rate</a></li>
-            <li><a href="#eligibility">Eligibility</a></li>
-            <li><a href="#emiCalculator">EMI Calculator</a></li>
+            <li><a href="#keyfeatures">Key Features</a></li>
+            <li><a href="#interstRate">Interest Rate</a></li>
+            <li><a href="#eligi">Eligibility</a></li>
+            <li><a href="#emi">EMI Calculator</a></li>
           </ul>
           <div class="leftSideNavbar">
             <div class="phoneNumderDiv">
@@ -695,20 +695,25 @@ location.reload();
               <p>info@comparehomeloans.in</p>
             </div>
 
-            <div class="userProfileDiv">
-              <div class="user-profile"></div>
-              <div class="login-hover">
-                <ul>
-                  <li id="login">
-                    <a href="#">Login/Signup</a>
-                  </li>
-                  <hr />
-
-                  <li>Signout</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+           
+            <select style="
+            padding: 8px 8px; 
+            font-size: 16px; 
+            background-color: white; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            background-image: url('./assets/images/icons8-pages-32.png'); /* Path to your logo image */
+            background-repeat: no-repeat;
+            background-position: 5px center;
+            padding-left: 40px; /* Adjust for the logo size */
+            background-size: 20px 20px;">
+            
+            <option selected disabled>Other</option>
+            <option> <a href="./privacy.html">Privacy Policies</a></option>
+            <option><a href="./terms.html">Terms & Conditions</a></option>
+          </select>
+          
         </nav>
       </header>
 
@@ -1161,12 +1166,12 @@ location.reload();
 
       <!-- key-features start -->
       <section class="lyt-section">
-        <div class="container" id="keyFeatures">
-          <div class="row" >
+        <div class="container">
+          <div class="row">
             <div class="col-xl-12">
               <h1
                 class="bs-heading typ-center mb-30 wow fadeInUp"
-                data-wow-delay="0.2s"
+                data-wow-delay="0.2s" id="keyfeatures"
               >
                 Key Features
               </h1>
@@ -1285,11 +1290,11 @@ location.reload();
       <!-- key-features end -->
       <!--Interest rates & Charges Start-->
       <section class="lyt-section typ-irc">
-        <div class="container position-relative" id="interestRate">
+        <div class="container position-relative">
           <div class="row">
             <div class="col-md-12">
               <div>
-                <h1 class="bs-heading wow fadeInUp" data-wow-delay="0.2s">
+                <h1 class="bs-heading wow fadeInUp" data-wow-delay="0.2s" id="interstRate">
                   Interest Rates &amp; Charges
                 </h1>
               </div>
@@ -2039,10 +2044,10 @@ location.reload();
       <!--Interest rates & Charges end-->
       <!-- Check Eligibility start -->
 
-      <section class="lyt-section typ-lp-eligibility" id="eligibility">
+      <section class="lyt-section typ-lp-eligibility">
         <h1
           class="bs-heading typ-center mb-30 wow fadeInUp"
-          data-wow-delay="0.2s"
+          data-wow-delay="0.2s" id="eligi"
         >
           Check Eligibility
         </h1>
@@ -2116,9 +2121,9 @@ location.reload();
         <div class="container-fluid cstm-container">
           <div class="row">
             <div class="col-xxl-7 col-xl-6 col-lg-6 emi-pd-zero">
-              <div class="emi-calculator" id="emiCalculator">
+              <div class="emi-calculator">
                 <div>
-                  <h1 class="bs-heading">EMI Calculator</h1>
+                  <h1 class="bs-heading" id="emi">EMI Calculator</h1>
                   <p class=" typ-subheading form-subhd" style="margin-bottom: 10px; font-weight: 400;
                   font-size: 20px;
                   line-height: 24px;
