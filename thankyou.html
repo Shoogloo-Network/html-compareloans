@@ -39,7 +39,7 @@
             <p>contact@comparehomeloans.in</p>
           </div>
 
-          <select id="nav-select" style="
+          <!-- <select id="nav-select" style="
           padding: 8px 8px; 
           font-size: 16px; 
           background-color: white; 
@@ -55,7 +55,7 @@
           <option selected disabled hidden>Other Pages</option>
           <option value="./privacy.html">Privacy Policies</option>
           <option value="./terms.html">Terms & Conditions</option>
-      </select>
+      </select> -->
         </div>
       </nav>
     </header>
@@ -69,13 +69,18 @@
           <a href="./index.html" style="color: #fff;">Go Home</a>
         </button>
       </section>
-      <script>
+      <section class="footer " style="margin-bottom: 0; margin-top: 120px;">
+        <div class="privacyFooterDiv"><h4><a href="./privacy.html" style="color: #fff !important; font-size: 16px;">Privacy Policy</a></h1></div><hr class="hrLine"/>
+        <div class="termsFooterDiv"><h4><a href="./terms.html" style="color: #fff !important; font-size: 16px;">Terms & Conditions</a></h1></div>
+      </section>
+      <!-- <script>
         document.getElementById('nav-select').addEventListener('change', function() {
             const url = this.value;
             if (url) {
                 window.location.href = url;
             }
         });
-      </script>
+      </script> -->
+      
   </body>
 </html>
