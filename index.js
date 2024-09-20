@@ -247,6 +247,11 @@ function family_invester(){
       },
       768: {
         slidesPerView: 2,
+        autoplay: {
+          delay: 1500,
+          reverseDirection: true,
+          // disableOnInteraction: false,
+        },
       },
       1024: {
         slidesPerView: 3,
@@ -279,68 +284,65 @@ function family_invester(){
         320: {
           slidesPerView: 1,
           // spaceBetween: 50,
-          autoplay: {
-            delay: 1500,
-            // disableOnInteraction: false,
-          },
+          autoplay: true,
         },
         768: {
           slidesPerView: 2,
-          // autoplay: false,
+          autoplay: true,
         },
         1024: {
           slidesPerView: 4,
-          // autoplay: false,
+          autoplay: true,
         },
         1200: {
           slidesPerView: 5,
-          // autoplay: false,
+          autoplay: false,
         },
         1400:{
           slidesPerView: 7,
-          // autoplay: false,
+          autoplay: false,
         }
       },
     });
   }
 
-function mobile_slider(){
-var swiper = new Swiper(".mobile-img-slider", {
-  slidesPerView: 3,
-centeredSlides: true,
-loop: true,
-spaceBetween: 30,
-  navigation: {
-    nextEl: ".swiper-button-next.technology-arrow-next",
-    prevEl: ".swiper-button-prev.technology-arrow-prev",
-  },
-  speed: 1000,
-  autoplay: {
-    delay: 3000,
-    pauseOnMouseEnter: true,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },      
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 1,
-      spaceBetween: 40,
-    },
-    1024: {
+  function mobile_slider(){
+    var swiper = new Swiper(".mobile-img-slider", {
       slidesPerView: 3,
-      spaceBetween: 30,
-    },
-  },
-});
-}
-
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 30,
+      navigation: {
+        nextEl: ".swiper-button-next.technology-arrow-next",
+        prevEl: ".swiper-button-prev.technology-arrow-prev",
+      },
+      speed: 1000,
+      autoplay: {
+        delay: 3000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },      
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+    }
+    
 function counter() {
   var counted = 0;
   // $(window).scroll(function() {

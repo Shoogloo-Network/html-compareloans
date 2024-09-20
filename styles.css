@@ -18092,7 +18092,8 @@ th {
 
     .cm-para.typ-24 {
         font-size: 22px;
-        line-height: 26px
+        line-height: 26px;
+        width: 325px;
     }
 
     .cm-para.typ-24.dPara {
@@ -18212,6 +18213,9 @@ th {
 }
 
 @media only screen and (max-width: 992px) {
+    .navBarUl{
+        display: none !important;
+    }
     .bs-header .navbar .navbar-collapse .navbar-nav {
         background-color: rgba(28, 28, 28, .8);
         padding: 15px
@@ -19976,7 +19980,9 @@ th {
         left: auto;
         background-color: #fff;
         padding: 40px;
-        margin-bottom: 50px
+        padding-bottom: 54px;
+        /* padding-top: 0px; */
+        margin: 0;
     }
 
     .bs-form.typ-banner-form .form-title {
@@ -20300,12 +20306,12 @@ th {
         position: relative;
         z-index: -1;
         width: 100%;
-        bottom: auto;
+        /* bottom: auto; */
         z-index: 2;
         left: auto;
         background-color: #fff;
         padding: 40px 12px;
-        margin-bottom: 50px
+        margin-bottom: 0px
     }
 
     .bs-form.typ-banner-form .form-title {
@@ -24421,7 +24427,8 @@ th {
     }
 
     .bs-grid-swiper .swiper .swiper-wrapper .swiper-slide .card .card-body {
-        padding: 30px 20px 30px
+        padding: 30px 20px 30px;
+        text-align: center;
     }
 
     .bs-grid-swiper .swiper .swiper-wrapper .swiper-slide .card .card-body .bank-img {
@@ -25329,8 +25336,8 @@ th {
 }
 
 .lyt-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    /* padding-top: 40px;
+    padding-bottom: 40px; */
     position: relative
 }
 
@@ -26901,8 +26908,8 @@ th {
 
 @media only screen and (max-width: 767px) {
     .lyt-section {
-        padding-top: 50px;
-        padding-bottom: 50px
+        /* padding-top: 50px;
+        padding-bottom: 50px */
     }
 
     .lyt-section.typ-home-banner {
@@ -40510,7 +40517,9 @@ span#hide {
 
 @media only screen and (max-width: 767px) {
 
-
+    .navBarUl{
+        display: none !important;
+    }
     h2.emi_cal.bs-heading.typ-subheading {
         font-size: 22px !important;
         line-height: 32px;
@@ -40548,7 +40557,7 @@ span#hide {
 
     .bs-form-banner {
 
-        top: -100px !important;
+        /* top: -100px !important; */
     }
 
 
@@ -40569,7 +40578,7 @@ span#hide {
 
     .bs-form.typ-banner-form {
 
-        margin-top: 10px;
+        margin-top: 0px;
     }
 
 
