@@ -148,6 +148,7 @@
     toggleButtons.forEach(button => {
       button.addEventListener('click', () => {
         button.href = "#formP";
+
       });
     });
   }
@@ -169,6 +170,9 @@
       toggleButtons.forEach((button) => {
         button.addEventListener("click", () => {
           formDiv.setAttribute("id", "formDiv");
+          // location.reload();
+           formDiv.style.height="75vh";
+        formDiv.style.top="140px";
           closeButton.classList.remove("hidden");
         });
       });
@@ -180,6 +184,8 @@
 
   closeButton.addEventListener("click", () => {
     formDiv.removeAttribute("id");
+    
+    location.reload();
     closeButton.classList.add("hidden");
   });
 });
@@ -438,6 +444,22 @@
       }
 
       function formValidation() {
+
+        const formDiv = document.querySelector(".formDiv2");
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+    // Check if formDiv exists
+    let formDiv = document.getElementById("formDiv");
+
+    if (!formDiv) {
+        
+      formDiv.style.height="88vh";
+        formDiv.style.top="110px";
+    } else {
+        console.log("formDiv is already added.");
+    }
+});
         // alert("entered func");
         var validate = true;
         // alert(validate);
@@ -545,7 +567,7 @@
           // mob.required = true;
           validate = false;
           document.getElementById("error_loan").innerHTML =
-            "Please enter loan amount from 30 Lac upto 10 Cr.";
+            "Please enter loan amount from 5 Lac upto 10 Cr.";
           //return false;
         } else {
           //var valueToNumber = ($('#loan').val()).replace(',', '').replace(',', '').replace(',', '');
@@ -656,15 +678,21 @@ location.reload();
     <main class="home">
       <header>
         <nav class="navBar">
-          <img
+          <a href="index.html"><img
             src="assets/images/campare_home_loans_logo-03.png"
             alt="Logo"
             class="logoImage"
-          />
+          /></a>
+          <ul class="navBarUl">
+            <li><a>Key Features</a></li>
+            <li><a>Interest Rate</a></li>
+            <li><a>Eligibility</a></li>
+            <li><a>EMI Calculator</a></li>
+          </ul>
           <div class="leftSideNavbar">
             <div class="phoneNumderDiv">
               <i class="fa-solid fa-envelope"></i>
-              <p>support@comparehomeloans.in</p>
+              <p>info@comparehomeloans.in</p>
             </div>
 
             <div class="userProfileDiv">
@@ -788,6 +816,23 @@ location.reload();
                           for="propertyDefault2"
                         >
                           LOAN AGAINST PROPERTY
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          onchange='myChange("error_loan_type")'
+                          class="form-check-input radioyesno"
+                          type="radio"
+                          name="radioyesno"
+                          value="Balance Transfer"
+                          id="balanceTransfer"
+                        />
+                        <label
+                          tabindex="2"
+                          class="form-check-label"
+                          for="balanceTransfer"
+                        >
+                          Balance Transfer
                         </label>
                       </div>
                       <p
@@ -2089,7 +2134,7 @@ location.reload();
                   font-size: 20px;
                   line-height: 24px;
                   letter-spacing: -0.025em;
-                  color: #1c1c1c;"
+                  "
               >
                 Easily compute your EMIs in real-time and get expert guidance to
                 manage your finances effectively.

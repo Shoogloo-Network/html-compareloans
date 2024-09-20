@@ -644,7 +644,9 @@ progress {
 }
 
 @media(min-width: 576px) {
-
+.navBar{
+    padding-left: 10px !important;
+}
     .container-sm,
     .container {
         max-width: 540px
@@ -652,7 +654,9 @@ progress {
 }
 
 @media(min-width: 768px) {
-
+    .navBar{
+        padding-left: 10px !important;
+    }
     .container-md,
     .container-sm,
     .container {
@@ -661,7 +665,7 @@ progress {
 }
 
 @media(min-width: 992px) {
-
+    
     .container-lg,
     .container-md,
     .container-sm,
@@ -793,6 +797,9 @@ progress {
 }
 
 @media(min-width: 768px) {
+    .navBar{
+        padding-left: 10px !important;
+    }
     .col-md {
         flex: 1 0 0%
     }
@@ -17994,6 +18001,9 @@ th {
 }
 
 @media only screen and (max-width: 767px) {
+    .navBar{
+        padding-left: 10px !important;
+    }
     .container.cstm-container.typ-right {
         padding-right: 15px
     }
@@ -18201,7 +18211,9 @@ th {
         background-color: rgba(28, 28, 28, .8);
         padding: 15px
     }
-
+    .leftSideNavbar{
+        gap: 5px !important;
+    }
     .bs-header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
         color: #fff
     }
@@ -18897,7 +18909,7 @@ th {
     margin-bottom: 50px;
     font-weight: 300;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 20px;
     letter-spacing: -0.025em
 }
 
@@ -19108,7 +19120,7 @@ th {
 
 .bs-form .range-calculator {
     position: relative;
-    margin-bottom: 30px
+    margin-bottom: 10px
 }
 
 .bs-form .range-calculator .input-change-value::before {
@@ -19172,7 +19184,7 @@ th {
 .bs-form .range-calculator .range-label-price {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px
+    margin-bottom: 10px
 }
 
 .bs-form .range-calculator .range-label-price .typ-range-label {
@@ -19617,7 +19629,7 @@ th {
     z-index: 2;
     background-color: #fff;
     width: 40%;
-    left: 60%;
+    left: 59%;
     padding: 40px
 }
 
@@ -19626,7 +19638,7 @@ th {
     margin-bottom: 30px;
     font-weight: 300;
     font-size: 24px;
-    line-height: 29px;
+    line-height: 20px;
     letter-spacing: -0.025em
 }
 
@@ -19686,7 +19698,7 @@ th {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        margin-bottom: 40px
+        margin-bottom: 20px
     }
 
     .bs-form.typ-banner-form .radio-box .form-check {
@@ -19704,7 +19716,7 @@ th {
         border: 1px solid #03b6ff;
         padding: 10px 0px;
         color: #fff;
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 500;
         padding: 10px 30px
     }
@@ -19714,7 +19726,7 @@ th {
         border: 1px solid rgba(28, 28, 28, .7);
         padding: 10px 0px;
         color: rgba(28, 28, 28, .7);
-        font-size: 14px;
+        font-size: 10px;
         border-radius: 50px;
         transition: all .3s;
         min-width: 95%;
@@ -19723,7 +19735,7 @@ th {
         font-weight: 500;
         margin-bottom: 0;
         cursor: pointer;
-        padding: 10px 30px
+        padding: 10px 10px
     }
 }
 
@@ -20539,7 +20551,7 @@ th {
 
 .bs-heading {
     font-family: "Inter", sans-serif;
-    font-size: 46px;
+    font-size: 34px;
     color: #1c1c1c;
     font-weight: 900;
     position: relative;
@@ -20577,7 +20589,7 @@ th {
 }
 
 .bs-heading.mb-30 {
-    margin-bottom: 30px
+    /* margin-bottom: 30px */
 }
 
 .bs-heading.typ-white {
@@ -20594,12 +20606,12 @@ th {
 }
 
 .bs-heading.head_heading {
-    font-size: 41px
+    font-size: 34px
 }
 
 .bs-heading.typ-subheading {
     color: #a3a3a3;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 300;
     margin-bottom: 40px;
     padding-top: 0
@@ -20616,7 +20628,7 @@ th {
 }
 
 .bs-heading.typ-subheading.typ-heading {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 39px;
     letter-spacing: -0.025em;
@@ -20651,10 +20663,10 @@ th {
 
 .bs-heading.typ-subheading.form-subhd {
     color: #7e7e7e !important;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     font-weight: 300;
-    font-size: 32px;
-    line-height: 39px;
+    font-size: 22px;
+    line-height: 36px;
     letter-spacing: -0.025em
 }
 
@@ -24851,7 +24863,7 @@ th {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    padding-top: 90px;
+    /* padding-top: 90px; */
     position: relative;
     min-height: 690px;
     /* background-color: rgba(0, 0, 0, 0.2); */
@@ -24883,7 +24895,7 @@ th {
 
 
 .bs-form-banner .row-height .content {
-    margin-top: 180px
+    margin-top: 160px
 }
 
 @media only screen and (max-width: 1200px) {
@@ -25306,8 +25318,8 @@ th {
 }
 
 .lyt-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     position: relative
 }
 
@@ -25317,7 +25329,7 @@ th {
 }
 
 .lyt-section.typ-top {
-    padding-top: 200px
+    /* padding-top: 200px */
 }
 
 .lyt-section.typ-no-pb {
@@ -25329,7 +25341,7 @@ th {
 }
 
 .lyt-section.typ-no-ag {
-    padding-bottom: 100px
+    /* padding-bottom: 100px */
 }
 
 .lyt-section.typ-home-banner {
@@ -26253,7 +26265,8 @@ th {
 @media(max-width: 1400px) {
     .lyt-section.typ-emi-cal .emi-calculator {
         background-color: #f5f5f5;
-        padding: 40px 50px
+        padding: 0px 50px;
+        padding-bottom: 50px;
     }
 
     .lyt-section.typ-contact {
@@ -29792,9 +29805,9 @@ th {
 .mod-custom-progress {
     position: relative;
     background-color: #1c1c1c;
-    padding: 100px 50px;
+    padding: 40px 50px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: flex-start;
     height: 100%;
     flex-direction: column
@@ -40507,7 +40520,7 @@ span#hide {
 
     img.desktop-hide {
 
-        display: block;
+        display: none;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -40715,7 +40728,8 @@ span#hide {
         border-radius: 30px;
         text-transform: uppercase;
         font-weight: 600;
-        float: right;
+        float: left;
+        font-size: 14px;
     }
 
     .bs-form.typ-banner-form .inputbox input {
@@ -40743,7 +40757,7 @@ span#hide {
     }
 
     .lyt-section {
-        padding-top: 38px !important;
+        /* padding-top: 38px !important; */
 
     }
 
@@ -40809,9 +40823,9 @@ span#hide {
 .close {
     position: fixed;
     margin-top: 0;
-    top: 90px;
+    top: 140px;
     /* margin-bottom: 30px; */
-   left: 980px;
+   left: 960px;
     /* position: absolute; */
     color: black;
     float: right;
@@ -40830,11 +40844,11 @@ span#hide {
 #formDiv{
    width: 50% !important;
    position: fixed;
-   height: 90vh;
-   padding-top: 10px;
+   height: 70vh;
+   padding-top: 15px;
    margin-top: 0;
 
-   top: 80px;
+   top: 140px;
    margin-bottom: 0;
    bottom: 650px;
    left: 340px;
@@ -40965,4 +40979,15 @@ margin: 0;
     /* align-content: center; */
     /* padding-top: 15px; */
     flex-wrap: wrap;
+}
+
+.navBarUl{
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 0 !important;
+    cursor: pointer;
 }
