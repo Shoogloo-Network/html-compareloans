@@ -24458,7 +24458,8 @@ th {
     }
 
     .bs-grid-swiper .swiper-button-prev.prev-arrow.swiper-button-disabled {
-        display: flex
+        display: none; 
+        /* Hidden Swiper Logo */
     }
 }
 
@@ -25164,19 +25165,22 @@ th {
         top: auto;
         right: 40px;
         bottom: -90px;
-        left: auto
+        left: auto;
+        display:none;
     }
 
     .bs-technology-slider .swiper-button-prev {
         width: 48px;
-        height: 48px
+        height: 48px;
+        display: none;
     }
 
     .bs-technology-slider .swiper-button-prev.technology-arrow-prev {
         top: auto;
         left: auto;
         right: 120px;
-        bottom: -90px
+        bottom: -90px;
+        display: none;
     }
 }
 
