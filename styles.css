@@ -19698,7 +19698,9 @@ th {
 
 @media(max-width: 1400px) {
     .bs-form.typ-banner-form {
-        padding: 40px
+        padding: 40px;
+        padding-bottom:10px;
+        margin-bottom: 12px;
     }
 
     .bs-form.typ-banner-form .radio-box {
