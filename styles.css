@@ -19151,8 +19151,12 @@ th {
 }
 
 .bs-form .range-calculator .input-change-value.typ-tenture::before {
-    content: "";
-    font-family: "icomoon"
+    content: "\f133"; /* Unicode for Font Awesome calendar icon */
+    font-family: "Font Awesome 5 Free"; /* Font family for Font Awesome */
+    font-weight: 900; /* This sets it to the solid style (fas) */
+    font-size: 16px; /* Adjust the size of the icon */
+    color: #333; /* Set the icon color */
+    margin-right: 8px; /* Add space between the icon and text */
 }
 
 .bs-form .range-calculator .input-change-value.typ-tenture::after {
